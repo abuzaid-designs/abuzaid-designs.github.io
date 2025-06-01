@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abu Zaid Designs - تواصل معنا</title>
-  
-  <!-- خطوط Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
     :root {
       --primary: #FF7A00;
       --primary-dark: #E56A00;
-      --secondary: #FF9E40;
       --dark: #1F2937;
-      --light: #F9FAFB;
       --whatsapp: #25D366;
       --telegram: #0088CC;
       --instagram: #E1306C;
       --facebook: #1877F2;
       --x: #000000;
-      --x-hover: #1DA1F2;
     }
 
     * {
@@ -39,7 +34,7 @@
       background-color: #f5f5f5;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 20px;
     }
@@ -59,7 +54,6 @@
       padding: 30px 25px 40px;
       text-align: center;
       color: white;
-      position: relative;
       clip-path: ellipse(100% 100% at 50% 0%);
     }
 
@@ -76,7 +70,6 @@
 
     .profile-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
     }
 
     .title {
@@ -141,7 +134,7 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: rgba(0, 0, 0, 0.05); color: var(--x); }
+    .x .icon-wrapper { background: rgba(0, 0, 0, 0.07); color: var(--x); }
 
     .arrow-icon {
       color: #999;
@@ -154,19 +147,6 @@
       transform: translateX(-6px);
     }
 
-    .whatsapp:hover { color: var(--whatsapp); }
-    .telegram:hover { color: var(--telegram); }
-    .instagram:hover { color: var(--instagram); }
-    .facebook:hover { color: var(--facebook); }
-    .x:hover { color: var(--x-hover); }
-
-    .watermark {
-      text-align: center;
-      margin-top: 20px;
-      color: #999;
-      font-size: 0.85rem;
-    }
-
     .footer-message {
       text-align: center;
       font-weight: 500;
@@ -175,6 +155,13 @@
       margin-top: 10px;
       padding: 10px 20px 20px;
       line-height: 1.6;
+    }
+
+    .watermark {
+      text-align: center;
+      margin-top: 20px;
+      color: #999;
+      font-size: 0.85rem;
     }
 
     @media (max-width: 600px) {
@@ -186,13 +173,14 @@
   </style>
 </head>
 <body>
+
   <div class="card">
     <div class="card-header">
-      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img">
+      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img" />
       <h1 class="title">Abu Zaid Designs</h1>
       <p class="subtitle">تواصل معنا</p>
     </div>
-    
+
     <div class="card-body">
       <div class="links-container">
         <a href="https://wa.me/201031423492" class="social-link whatsapp">
@@ -231,14 +219,18 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
       </div>
-      <div class="watermark">
-        © 2025 Abu Zaid Designs
-      </div>
+
       <div class="footer-message">
         التصميم فن، والتميز أسلوب.<br>
         Design is art, and excellence is a lifestyle.
       </div>
     </div>
   </div>
+
+  <!-- العلامة المائية في آخر الصفحة -->
+  <div class="watermark">
+    © 2025 Abu Zaid Designs
+  </div>
+
 </body>
 </html>
