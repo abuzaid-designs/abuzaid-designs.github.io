@@ -508,6 +508,15 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       border: 1px solid rgba(0,0,0,0.05);
     }
+    
+    .service-card-wide {
+      grid-column: span 2;
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
 
     .service-card-icon {
       color: var(--primary);
@@ -605,6 +614,10 @@
       .services-grid {
         grid-template-columns: 1fr;
       }
+      
+      .service-card-wide {
+        grid-column: span 1;
+      }
     }
   </style>
 </head>
@@ -617,7 +630,6 @@
         <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img" />
         <h1 class="title">Abu Zaid Designs</h1>
         <p class="subtitle">إسلام أبو زيد - مصمم جرافيك محترف</p>
-        <p class="tagline">تواصل معنا</p>
       </div>
 
       <div class="card-body">
@@ -723,6 +735,12 @@
             <div class="service-card-title">تصميمات السوشيال ميديا</div>
             <div class="service-card-desc">تصميم منشورات، ستوريات، بانرات، وإعلانات لوسائل التواصل الاجتماعي</div>
           </div>
+          
+          <div class="service-card-wide">
+            <div class="service-card-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="service-card-title">تصميم مخصص حسب طلبك</div>
+            <div class="service-card-desc">أخبرنا عن احتياجاتك التصميمية وسنقوم بتنفيذها لك بأعلى جودة واحترافية</div>
+          </div>
         </div>
         
         <a href="#contact" class="btn btn-primary btn-block" style="margin-top: 20px;">اطلب خدمتك الآن</a>
@@ -738,7 +756,7 @@
         </div>
         
         <div class="links-container" style="margin-top: 20px;">
-          <a href="https://behance.net/abuzaid_designs" class="social-link behance" target="_blank">
+          <a href="https://behance.net/abuzaid17" class="social-link behance" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-behance"></i></div>
               <span>تصفح أعمالنا على Behance</span>
@@ -917,14 +935,3 @@
           entry.target.style.transform = 'translateY(0)';
         }
       });
-    }, observerOptions);
-    
-    document.querySelectorAll('.card').forEach(card => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(card);
-    });
-  </script>
-</body>
-</html>
