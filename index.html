@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abu Zaid Designs - Contact Links</title>
+  <title>Abu Zaid Designs - روابط التواصل</title>
   
-  <!-- Google Fonts -->
+  <!-- خطوط Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,7 +37,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
     
     body {
@@ -59,13 +58,14 @@
       background: white;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
       position: relative;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
     
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     }
     
     .card-header {
@@ -76,50 +76,74 @@
       position: relative;
     }
     
+    .card-header::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: white;
+      transform: skewY(-3deg);
+      z-index: 1;
+    }
+    
     .profile-img {
-      width: 130px;
-      height: 130px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       border: 4px solid rgba(255, 255, 255, 0.3);
       object-fit: cover;
       margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
     }
     
     .profile-img:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
       border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     }
     
     .title {
-      font-size: 2rem;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 8px;
       letter-spacing: -0.5px;
+      position: relative;
+      z-index: 2;
     }
     
     .subtitle {
+      font-family: 'Tajawal', sans-serif;
       font-size: 1.1rem;
       opacity: 0.9;
       font-weight: 300;
+      position: relative;
+      z-index: 2;
     }
     
     .card-body {
-      padding: 35px 30px;
+      padding: 40px 30px 30px;
+      position: relative;
+      z-index: 2;
     }
     
     .links-container {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      margin-bottom: 30px;
     }
     
     .social-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 22px;
+      padding: 18px 25px;
       background: white;
       border-radius: 14px;
       text-decoration: none;
@@ -129,18 +153,19 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
     
     .social-link:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
     
     .social-link::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 4px;
       height: 100%;
       background: var(--primary);
@@ -155,13 +180,13 @@
     .link-content {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       flex-grow: 1;
     }
     
     .icon-wrapper {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -180,30 +205,71 @@
     
     .link-text {
       flex-grow: 1;
-      text-align: left;
+      text-align: right;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.1rem;
     }
     
     .arrow-icon {
       color: var(--gray);
       font-size: 14px;
       transition: all 0.3s ease;
-      margin-left: 5px;
+      margin-right: 5px;
     }
     
     .social-link:hover .arrow-icon {
-      transform: translateX(5px);
+      transform: translateX(-5px);
       color: var(--primary);
+    }
+    
+    .motto {
+      text-align: center;
+      margin: 30px 0;
+      font-style: italic;
+      position: relative;
+    }
+    
+    .motto::before, .motto::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gray), transparent);
+    }
+    
+    .motto::before {
+      right: 0;
+    }
+    
+    .motto::after {
+      left: 0;
+    }
+    
+    .motto-arabic {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    
+    .motto-english {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      color: var(--gray);
+      font-weight: 400;
     }
     
     .watermark {
       text-align: center;
-      margin-top: 30px;
       font-size: 0.85rem;
       color: var(--gray);
       opacity: 0.8;
+      font-family: 'Tajawal', sans-serif;
     }
     
-    /* Platform-specific hover effects */
+    /* تأثيرات خاصة بكل منصة */
     .whatsapp:hover { color: var(--whatsapp); border-color: rgba(37, 211, 102, 0.2); }
     .instagram:hover { color: var(--instagram); border-color: rgba(225, 48, 108, 0.2); }
     .facebook:hover { color: var(--facebook); border-color: rgba(24, 119, 242, 0.2); }
@@ -222,16 +288,30 @@
       }
       
       .profile-img {
-        width: 110px;
-        height: 110px;
+        width: 120px;
+        height: 120px;
       }
       
       .title {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
       }
       
       .card-body {
-        padding: 25px 20px;
+        padding: 30px 20px 25px;
+      }
+      
+      .social-link {
+        padding: 16px 20px;
+      }
+      
+      .icon-wrapper {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
+      
+      .link-text {
+        font-size: 1rem;
       }
     }
   </style>
@@ -241,7 +321,7 @@
     <div class="card-header">
       <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img">
       <h1 class="title">Abu Zaid Designs</h1>
-      <p class="subtitle">Connect with us on social media</p>
+      <p class="subtitle">تواصل معنا على وسائل التواصل الاجتماعي</p>
     </div>
     
     <div class="card-body">
@@ -251,9 +331,9 @@
             <div class="icon-wrapper">
               <i class="fab fa-whatsapp"></i>
             </div>
-            <div class="link-text">WhatsApp Business</div>
+            <div class="link-text">واتساب أعمال</div>
           </div>
-          <i class="fas fa-arrow-right arrow-icon"></i>
+          <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
         <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram" target="_blank">
@@ -261,9 +341,9 @@
             <div class="icon-wrapper">
               <i class="fab fa-instagram"></i>
             </div>
-            <div class="link-text">Instagram</div>
+            <div class="link-text">إنستغرام</div>
           </div>
-          <i class="fas fa-arrow-right arrow-icon"></i>
+          <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
         <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook" target="_blank">
@@ -271,9 +351,9 @@
             <div class="icon-wrapper">
               <i class="fab fa-facebook-f"></i>
             </div>
-            <div class="link-text">Facebook</div>
+            <div class="link-text">فيسبوك</div>
           </div>
-          <i class="fas fa-arrow-right arrow-icon"></i>
+          <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
         <a href="https://x.com/abuzaid_designs" class="social-link x-platform" target="_blank">
@@ -281,9 +361,9 @@
             <div class="icon-wrapper">
               <i class="fab fa-x-twitter"></i>
             </div>
-            <div class="link-text">X (Twitter)</div>
+            <div class="link-text">تويتر (X)</div>
           </div>
-          <i class="fas fa-arrow-right arrow-icon"></i>
+          <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
         <a href="https://t.me/abuzaid_designs" class="social-link telegram" target="_blank">
@@ -291,9 +371,9 @@
             <div class="icon-wrapper">
               <i class="fab fa-telegram-plane"></i>
             </div>
-            <div class="link-text">Telegram</div>
+            <div class="link-text">تيليجرام</div>
           </div>
-          <i class="fas fa-arrow-right arrow-icon"></i>
+          <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
         <a href="https://www.threads.net/@abuzaid_designs" class="social-link threads" target="_blank">
@@ -303,12 +383,17 @@
             </div>
             <div class="link-text">Threads</div>
           </div>
-          <i class="fas fa-arrow-right arrow-icon"></i>
+          <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
       </div>
       
+      <div class="motto">
+        <div class="motto-arabic">نُصمّم بشغف، ونُقدّم بدقّة.</div>
+        <div class="motto-english">Design with passion, deliver with precision.</div>
+      </div>
+      
       <div class="watermark">
-        © 2023 Abu Zaid Designs. All rights reserved
+        © 2023 أبو زيد للتصميمات. جميع الحقوق محفوظة
       </div>
     </div>
   </div>
