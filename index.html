@@ -1,13 +1,10 @@
-Here's the modified HTML code with the requested changes to update the logo and add Twitter/X logo links:
-
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abu Zaid Designs - تصميمات إبداعية احترافية</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo.png" type="image/png">
+  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -350,12 +347,30 @@ Here's the modified HTML code with the requested changes to update the logo and 
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       margin-bottom: 20px;
       border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     .testimonial-text {
-      margin-bottom: 15px;
       line-height: 1.7;
       color: var(--text-color);
+      padding: 10px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .testimonial-text::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid var(--primary-light);
     }
 
     .testimonial-author {
@@ -365,19 +380,21 @@ Here's the modified HTML code with the requested changes to update the logo and 
     }
 
     .author-avatar {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       object-fit: cover;
+      border: 2px solid var(--primary-light);
     }
 
     .author-info {
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
     }
 
     .author-name {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--dark);
     }
 
@@ -388,7 +405,8 @@ Here's the modified HTML code with the requested changes to update the logo and 
 
     .rating {
       color: var(--primary);
-      margin-top: 5px;
+      margin-top: 3px;
+      font-size: 0.9rem;
     }
 
     .portfolio-grid {
@@ -569,19 +587,6 @@ Here's the modified HTML code with the requested changes to update the logo and 
     .telegram-icon { background: var(--telegram); }
     .x-icon { background: var(--x); }
 
-    /* Twitter/X Logo Styles */
-    .twitter-logo {
-      width: 40px;
-      height: 40px;
-      margin: 10px auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .twitter-logo:hover {
-      transform: scale(1.1);
-    }
-
     @media (max-width: 600px) {
       body {
         padding: 15px;
@@ -640,16 +645,13 @@ Here's the modified HTML code with the requested changes to update the logo and 
 </head>
 <body>
 
-  <!-- Twitter/X Logo at the top -->
-  <a href="https://x.com/abuzaid_designs" target="_blank" style="margin-bottom: 20px;">
-    <img src="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo-X.png" alt="Twitter/X" class="twitter-logo">
-  </a>
-
   <div class="container">
     <!-- Main Profile Card -->
     <div class="card">
       <div class="card-header">
-        <img src="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo.png" alt="Abu Zaid Designs" class="profile-img" />
+        <div class="icon-wrapper" style="background: rgba(0, 0, 0, 0.1); width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 4px solid rgba(255, 255, 255, 0.5); margin: 0 auto 20px;">
+          <i class="fab fa-x-twitter" style="font-size: 3rem; color: black;"></i>
+        </div>
         <h1 class="title">Abu Zaid Designs</h1>
         <p class="subtitle">إسلام أبو زيد - مصمم جرافيك محترف</p>
       </div>
@@ -795,9 +797,6 @@ Here's the modified HTML code with the requested changes to update the logo and 
         <h2 class="section-title"><i class="fas fa-star"></i> آراء العملاء</h2>
         
         <div class="testimonial">
-          <div class="testimonial-text">
-            "تعاملت مع إسلام أبو زيد لتصميم شعار لمطعمي الجديد، وكانت الخدمة ممتازة من حيث التواصل السريع والاهتمام بكل التفاصيل. الشعار النهائي فاق توقعاتي تماماً!"
-          </div>
           <div class="testimonial-author">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Mohamed" class="author-avatar">
             <div class="author-info">
@@ -806,12 +805,12 @@ Here's the modified HTML code with the requested changes to update the logo and 
               <div class="rating">★★★★★</div>
             </div>
           </div>
+          <div class="testimonial-text">
+            "تعاملت مع إسلام أبو زيد لتصميم شعار لمطعمي الجديد، وكانت الخدمة ممتازة من حيث التواصل السريع والاهتمام بكل التفاصيل. الشعار النهائي فاق توقعاتي تماماً!"
+          </div>
         </div>
         
         <div class="testimonial">
-          <div class="testimonial-text">
-            "إسلام أبو زيد صمم دعوات زفافي بطريقة إبداعية رائعة. كان متعاوناً جداً ويستمع لجميع ملاحظاتي حتى وصلنا للتصميم المثالي الذي يعبر عن شخصيتنا."
-          </div>
           <div class="testimonial-author">
             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mona Ali" class="author-avatar">
             <div class="author-info">
@@ -820,12 +819,12 @@ Here's the modified HTML code with the requested changes to update the logo and 
               <div class="rating">★★★★★</div>
             </div>
           </div>
+          <div class="testimonial-text">
+            "إسلام أبو زيد صمم دعوات زفافي بطريقة إبداعية رائعة. كان متعاوناً جداً ويستمع لجميع ملاحظاتي حتى وصلنا للتصميم المثالي الذي يعبر عن شخصيتنا."
+          </div>
         </div>
 
         <div class="testimonial">
-          <div class="testimonial-text">
-            "كلفت إسلام أبو زيد بتصميم الهوية البصرية لشركتي الناشئة، وكان اختياراً موفقاً. التصاميم احترافية وعصرية، مع التزام دقيق بالمواعيد النهائية لتسليم العمل."
-          </div>
           <div class="testimonial-author">
             <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Youssef Ahmed" class="author-avatar">
             <div class="author-info">
@@ -833,6 +832,9 @@ Here's the modified HTML code with the requested changes to update the logo and 
               <div class="author-title">رائد أعمال</div>
               <div class="rating">★★★★★</div>
             </div>
+          </div>
+          <div class="testimonial-text">
+            "كلفت إسلام أبو زيد بتصميم الهوية البصرية لشركتي الناشئة، وكان اختياراً موفقاً. التصاميم احترافية وعصرية، مع التزام دقيق بالمواعيد النهائية لتسليم العمل."
           </div>
         </div>
       </div>
@@ -867,17 +869,17 @@ Here's the modified HTML code with the requested changes to update the logo and 
         <div class="contact-form" id="contactForm">
           <div class="form-group">
             <label for="name" class="form-label">الاسم بالكامل</label>
-            <input type="text" id="name" class="form-input" placeholder="أدخل اسمك">
+            <input type="text" id="name" class="form-input" placeholder="أدخل اسمك" required>
           </div>
           
           <div class="form-group">
             <label for="phone" class="form-label">رقم الهاتف</label>
-            <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك">
+            <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
           </div>
           
           <div class="form-group">
             <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
-            <select id="service" class="form-select">
+            <select id="service" class="form-select" required>
               <option value="">اختر من القائمة</option>
               <option value="شعار وهوية بصرية">شعار وهوية بصرية</option>
               <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
@@ -891,10 +893,10 @@ Here's the modified HTML code with the requested changes to update the logo and 
           
           <div class="form-group">
             <label for="message" class="form-label">الرسالة</label>
-            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية"></textarea>
+            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية" required></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary" id="submitBtn">إرسال الرسالة</button>
+          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال الرسالة</button>
         </div>
         
         <div class="footer-message" style="margin-top: 25px;">
@@ -905,24 +907,18 @@ Here's the modified HTML code with the requested changes to update the logo and 
     </div>
   </div>
 
-  <!-- Twitter/X Logo at the bottom -->
-  <a href="https://x.com/abuzaid_designs" target="_blank" style="margin-top: 20px;">
-    <img src="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo-X.png" alt="Twitter/X" class="twitter-logo">
-  </a>
-
   <div class="copyright">
     © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
   </div>
 
   <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top:
+    function sendToWhatsApp() {
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+
+      // التحقق من الحقول المطلوبة
+      if (!name || !phone || !service || !message) {
+        alert('الرجاء ملء جميع الحقول المطلوبة');
+        return;
