@@ -344,22 +344,14 @@
       background: white;
       padding: 20px;
       border-radius: var(--border-radius);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       margin-bottom: 20px;
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-
-    .testimonial:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
     .testimonial-text {
       margin-bottom: 15px;
       line-height: 1.7;
       color: var(--text-color);
-      font-size: 0.95rem;
     }
 
     .testimonial-author {
@@ -373,7 +365,6 @@
       height: 40px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--primary-light);
     }
 
     .author-info {
@@ -394,7 +385,6 @@
     .rating {
       color: var(--primary);
       margin-top: 5px;
-      font-size: 0.9rem;
     }
 
     .portfolio-grid {
@@ -517,41 +507,26 @@
       padding: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       border: 1px solid rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
     }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-
+    
     .service-card-wide {
       grid-column: span 2;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .service-card-wide .service-card-icon {
-      font-size: 2rem;
-      margin-bottom: 0;
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .service-card-icon {
       color: var(--primary);
       font-size: 1.5rem;
       margin-bottom: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .service-card:hover .service-card-icon {
-      transform: scale(1.1);
     }
 
     .service-card-title {
       font-weight: 700;
       margin-bottom: 8px;
-      font-size: 1.1rem;
     }
 
     .service-card-desc {
@@ -565,7 +540,6 @@
       justify-content: center;
       gap: 15px;
       margin: 25px 0;
-      flex-wrap: wrap;
     }
 
     .contact-icon {
@@ -582,7 +556,7 @@
     }
 
     .contact-icon:hover {
-      transform: translateY(-5px) scale(1.1);
+      transform: translateY(-5px);
     }
 
     .whatsapp-icon { background: var(--whatsapp); }
@@ -643,8 +617,6 @@
       
       .service-card-wide {
         grid-column: span 1;
-        flex-direction: column;
-        text-align: center;
       }
     }
   </style>
@@ -696,7 +668,7 @@
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
+              <div class="icon-wrapper"><img src="logo-X.png" alt="X Logo" style="width: 20px; height: 20px;" /></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -764,12 +736,10 @@
             <div class="service-card-desc">تصميم منشورات، ستوريات، بانرات، وإعلانات لوسائل التواصل الاجتماعي</div>
           </div>
           
-          <div class="service-card service-card-wide">
+          <div class="service-card-wide">
             <div class="service-card-icon"><i class="fas fa-lightbulb"></i></div>
-            <div>
-              <div class="service-card-title">تصميم مخصص حسب طلبك</div>
-              <div class="service-card-desc">أخبرنا عن احتياجاتك التصميمية وسنقوم بتنفيذها بدقة واحترافية</div>
-            </div>
+            <div class="service-card-title">تصميم مخصص حسب طلبك</div>
+            <div class="service-card-desc">أخبرنا عن احتياجاتك التصميمية وسنقوم بتنفيذها لك بأعلى جودة واحترافية</div>
           </div>
         </div>
         
@@ -786,7 +756,7 @@
         </div>
         
         <div class="links-container" style="margin-top: 20px;">
-          <a href="https://www.behance.net/abuzaid17" class="social-link behance" target="_blank">
+          <a href="https://behance.net/abuzaid17" class="social-link behance" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-behance"></i></div>
               <span>تصفح أعمالنا على Behance</span>
@@ -804,7 +774,7 @@
         
         <div class="testimonial">
           <div class="testimonial-text">
-            "تعاملت مع إسلام أبو زيد لتصميم شعار لمطعمي الجديد، وكانت النتيجة رائعة! الشعار يعبر تماماً عن هوية المطعم وحصل على إعجاب الجميع. إسلام استمع جيداً لمتطلباتي وقدم عدة خيارات احترافية."
+            "تعاملت مع أبو زيد ديزاينز لتصميم شعار لمطعمي الجديد، وكانت النتيجة رائعة! الشعار يعبر تماماً عن هوية المطعم وحصل على إعجاب الجميع."
           </div>
           <div class="testimonial-author">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Mohamed" class="author-avatar">
@@ -818,7 +788,7 @@
         
         <div class="testimonial">
           <div class="testimonial-text">
-            "تصميمات دعوات زفافي كانت أكثر من رائعة! إسلام تفهم تماماً ما أردته وحول أفكاري إلى واقع ملموس. الاحترافية في التنفيذ والاهتمام بأدق التفاصيل جعلت المناسبة مميزة."
+            "تصميمات دعوات زفافي كانت أكثر من رائعة! الاحترافية في التنفيذ والاهتمام بأدق التفاصيل جعلت المناسبة مميزة."
           </div>
           <div class="testimonial-author">
             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mona Ali" class="author-avatar">
@@ -832,7 +802,7 @@
 
         <div class="testimonial">
           <div class="testimonial-text">
-            "استفدت من خدمات إسلام أبو زيد في تصميم الهوية البصرية لشركتي الناشئة، وكان العمل مميزاً من حيث الجودة والسرعة في التنفيذ. التصاميم ساعدت في تعزيز حضورنا في السوق وجذبت عملاء جدد."
+            "استفدت من خدمات أبو زيد ديزاينز في تصميم الهوية البصرية لشركتي الناشئة، وكان العمل مميزاً من حيث الجودة والسرعة في التنفيذ."
           </div>
           <div class="testimonial-author">
             <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Youssef Ahmed" class="author-avatar">
@@ -868,7 +838,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <i class="fab fa-x-twitter"></i>
+            <img src="logo-X.png" alt="X Logo" style="width: 20px; height: 20px;">
           </a>
         </div>
         
@@ -939,4 +909,30 @@
     const submitBtn = document.getElementById('submitBtn');
     
     if (contactForm && submitBtn) {
-      contactForm
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        const whatsappMessage = `مرحباً، أريد استشارة تصميمية%0A%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع الخدمة: ${service}%0Aالرسالة: ${message}`;
+        
+        window.open(`https://wa.me/201031423492?text=${whatsappMessage}`, '_blank');
+      });
+    }
+    
+    // Add animation to cards when they come into view
+    const observerOptions = {
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+      
