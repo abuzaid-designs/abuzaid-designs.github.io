@@ -32,7 +32,7 @@
     }
 
     body {
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -40,7 +40,7 @@
       align-items: center;
       padding: 20px;
       position: relative;
-      background-image: url('https://images.unsplash.com/photo-1551288045-bdda4f05aeb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -53,7 +53,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(245, 245, 245, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       z-index: -1;
     }
 
@@ -63,15 +63,17 @@
       background: rgba(255, 255, 255, 0.95);
       border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
       position: relative;
       margin-bottom: 30px;
       border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(3px);
       transition: transform 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     }
 
     .card-header {
@@ -110,6 +112,7 @@
 
     .profile-img:hover {
       transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
 
     .title {
@@ -118,8 +121,7 @@
       margin-bottom: 8px;
       position: relative;
       z-index: 1;
-      color: white;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     .subtitle {
@@ -128,12 +130,11 @@
       font-weight: 300;
       position: relative;
       z-index: 1;
-      color: rgba(255,255,255,0.9);
     }
 
     .card-body {
       padding: 30px 30px 20px;
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
     }
 
     .links-container {
@@ -152,14 +153,14 @@
       text-decoration: none;
       color: var(--dark);
       font-weight: 600;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
       transition: all 0.3s ease;
-      border: 1px solid rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.04);
     }
 
     .social-link:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .link-content {
@@ -184,7 +185,7 @@
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
     .x .icon-wrapper { 
-      background: rgba(0, 0, 0, 0.07); 
+      background: rgba(0, 0, 0, 0.08); 
       color: var(--x);
       position: relative;
     }
@@ -225,9 +226,9 @@
       color: #666;
       font-size: 0.95rem;
       padding: 12px 25px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 50px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
       width: fit-content;
       margin: 0 auto;
       backdrop-filter: blur(5px);
@@ -238,6 +239,7 @@
       body {
         padding: 15px;
         background-attachment: scroll;
+        background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
       }
       
       .card { 
