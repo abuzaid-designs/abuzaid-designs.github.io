@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abu Zaid Designs - روابط التواصل</title>
+  <title>Abu Zaid Designs - Social Links</title>
   
-  <!-- خطوط Google -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   
   <style>
     :root {
-      --primary: #FF7A00; /* اللون البرتقالي الرئيسي */
+      --primary: #FF7A00; /* Main orange color */
       --primary-dark: #E56A00;
       --secondary: #FF9E40;
       --dark: #1F2937;
@@ -28,7 +28,7 @@
       --telegram: #0088CC;
       --instagram: #E1306C;
       --facebook: #1877F2;
-      --x: #000000; /* اللون الجديد لـ X */
+      --x: #000000; /* X platform color */
     }
     
     * {
@@ -59,11 +59,12 @@
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
     
     .card:hover {
-      transform: translateY(-5px) rotate(1deg);
+      transform: translateY(-8px) rotate(1deg);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     }
     
     .card-header {
@@ -75,16 +76,39 @@
       overflow: hidden;
     }
     
+    /* Orange header animations */
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        rgba(255,255,255,0.1) 0%,
+        rgba(255,255,255,0) 50%,
+        rgba(255,255,255,0.1) 100%
+      );
+      background-size: 200% 200%;
+      animation: shine 3s infinite linear;
+    }
+    
+    @keyframes shine {
+      0% { background-position: 100% 50%; }
+      100% { background-position: -100% 50%; }
+    }
+    
     .card-header::after {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-      transform: rotate(30deg);
-      pointer-events: none;
+      bottom: -50px;
+      right: -50px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      filter: blur(20px);
     }
     
     .profile-img {
@@ -95,7 +119,7 @@
       object-fit: cover;
       margin-bottom: 15px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       z-index: 1;
     }
@@ -103,7 +127,7 @@
     .profile-img:hover {
       transform: scale(1.1) rotate(5deg);
       border-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
     
     .title {
@@ -144,15 +168,15 @@
       color: var(--dark);
       font-weight: 500;
       border: 1px solid #EDEDED;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
       overflow: hidden;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
     }
     
     .social-link:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     
     .social-link::before {
@@ -185,7 +209,7 @@
       align-items: center;
       justify-content: center;
       font-size: 19px;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
     .social-link:hover .icon-wrapper {
@@ -196,7 +220,34 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: rgba(0, 0, 0, 0.1); color: var(--x); }
+    .x .icon-wrapper { 
+      background: rgba(0, 0, 0, 0.1); 
+      color: var(--x);
+      position: relative;
+    }
+    
+    /* Special X logo styling */
+    .x-logo {
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .x-logo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--x);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .x:hover .x-logo::after {
+      transform: scaleX(1);
+    }
     
     .arrow-icon {
       color: var(--gray);
@@ -223,12 +274,15 @@
       transform: scale(1.02);
     }
     
-    /* تأثيرات خاصة بكل منصة */
+    /* Platform specific hover effects */
     .whatsapp:hover { color: var(--whatsapp); border-color: rgba(37, 211, 102, 0.3); }
     .telegram:hover { color: var(--telegram); border-color: rgba(0, 136, 204, 0.3); }
     .instagram:hover { color: var(--instagram); border-color: rgba(225, 48, 108, 0.3); }
     .facebook:hover { color: var(--facebook); border-color: rgba(24, 119, 242, 0.3); }
-    .x:hover { color: var(--x); border-color: rgba(0, 0, 0, 0.3); }
+    .x:hover { 
+      color: var(--x); 
+      border-color: rgba(0, 0, 0, 0.3);
+    }
     
     /* Animation for social links */
     @keyframes fadeInUp {
@@ -261,13 +315,13 @@
     }
     
     .profile-img {
-      animation: pulse 2s infinite;
+      animation: pulse 3s infinite;
     }
     
     /* Floating animation for card */
     @keyframes float {
       0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-15px); }
       100% { transform: translateY(0px); }
     }
     
@@ -275,10 +329,18 @@
       animation: float 6s ease-in-out infinite;
     }
     
-    /* Special X logo styling */
-    .x-logo {
-      font-weight: bold;
-      font-style: normal;
+    /* Glowing effect for X on hover */
+    .x:hover .icon-wrapper {
+      animation: xGlow 1.5s infinite alternate;
+    }
+    
+    @keyframes xGlow {
+      from {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      }
+      to {
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      }
     }
     
     @media (max-width: 480px) {
@@ -310,7 +372,7 @@
     <div class="card-header">
       <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img">
       <h1 class="title">Abu Zaid Designs</h1>
-      <p class="subtitle">تواصل معنا على وسائل التواصل الاجتماعي</p>
+      <p class="subtitle">Connect with us on social media</p>
     </div>
     
     <div class="card-body">
@@ -320,7 +382,7 @@
             <div class="icon-wrapper">
               <i class="fab fa-whatsapp"></i>
             </div>
-            <span>واتساب</span>
+            <span>WhatsApp</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
@@ -330,7 +392,7 @@
             <div class="icon-wrapper">
               <i class="fab fa-telegram-plane"></i>
             </div>
-            <span>تيليجرام</span>
+            <span>Telegram</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
@@ -340,7 +402,7 @@
             <div class="icon-wrapper">
               <i class="fab fa-instagram"></i>
             </div>
-            <span>إنستجرام</span>
+            <span>Instagram</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
@@ -350,7 +412,7 @@
             <div class="icon-wrapper">
               <i class="fab fa-facebook-f"></i>
             </div>
-            <span>فيسبوك</span>
+            <span>Facebook</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
@@ -360,7 +422,7 @@
             <div class="icon-wrapper">
               <i class="fab fa-x-twitter x-logo"></i>
             </div>
-            <span>إكس (تويتر)</span>
+            <span>X (Twitter)</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
