@@ -926,3 +926,27 @@
 
       // التحقق من الحقول المطلوبة
       if (!
+
+<a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
+  <img src="logo-X.png" alt="X" class="custom-icon-x">
+</a>
+
+.custom-icon-x {
+  width: 22px;       /* حجم الأيقونة */
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* يحول اللون إلى أبيض (اختياري) */
+}
+
+/* إذا كنت تريد إزالة الفلتر الأبيض (لحفظ اللون الأصلي للشعار) */
+.x:hover .custom-icon-x,
+.x-icon:hover .custom-icon-x {
+  filter: none;
+}
+<img src="images/logo-X.png" alt="X">
+
+git add index.html logo-X.png
+
+git commit -m "استبدلت أيقونة X بشعار logo-X.png"
+git push origin main
+
