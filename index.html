@@ -931,3 +931,57 @@
         *نوع الخدمة:* ${service}
         
         *
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- باقي الـ head يبقى كما هو بدون تغيير -->
+  <style>
+    /* أضف هذه القواعد الجديدة في قسم الـ style */
+    .custom-icon-x {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      filter: brightness(0) invert(1); /* لتظهر بيضاء */
+    }
+
+    .x .icon-wrapper {
+      background: transparent !important; /* إزالة الخلفية الرمادية */
+    }
+
+    .x-icon {
+      background: #000 !important; /* خلفية سوداء للأيقونة في قسم التواصل */
+    }
+
+    /* باقي الـ CSS يبقى كما هو */
+  </style>
+</head>
+<body>
+  <!-- ... الأقسام الأخرى تبقى كما هي ... -->
+
+  <!-- قسم الروابط الرئيسية (التعديل هنا) -->
+  <div class="links-container">
+    <!-- الروابط الأخرى تبقى كما هي -->
+    <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
+      <div class="link-content">
+        <div class="icon-wrapper"><img src="images/logo-X.png" alt="X" class="custom-icon-x"></div>
+        <span>Twitter / X</span>
+      </div>
+      <i class="fas fa-arrow-left arrow-icon"></i>
+    </a>
+  </div>
+
+  <!-- ... الأقسام الأخرى تبقى كما هي ... -->
+
+  <!-- قسم التواصل (التعديل هنا) -->
+  <div class="contact-icons">
+    <!-- أيقونات التواصل الأخرى تبقى كما هي -->
+    <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
+      <img src="images/logo-X.png" alt="X" class="custom-icon-x">
+    </a>
+  </div>
+
+  <!-- ... باقي الصفحة يبقى كما هو ... -->
+</body>
+</html>
+<img src="images/logo-X.png" alt="X" class="custom-icon-x">
