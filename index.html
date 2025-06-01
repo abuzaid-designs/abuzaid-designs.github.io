@@ -3,96 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abu Zaid Designs - روابط التواصل</title>
-  
-  <!-- خطوط Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
+  <title>Abu Zaid Designs</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
     :root {
       --primary: #FF7A00;
-      --primary-dark: #E56A00;
-      --secondary: #FF9E40;
-      --dark: #1F2937;
-      --light: #F9FAFB;
-      --whatsapp: #25D366;
-      --telegram: #0088CC;
-      --instagram: #E1306C;
-      --facebook: #1877F2;
       --x: #000000;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Tajawal', sans-serif;
-    }
-    
     body {
-      background-color: #f5f5f5;
-      min-height: 100vh;
+      background: #f5f5f5;
+      font-family: 'Tajawal', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
+      margin: 0;
       padding: 20px;
     }
     
     .card {
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
       background: white;
       border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      position: relative;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
     
-    /* Header Design with Curved Bottom */
+    /* Header with Smooth Curve */
     .card-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      padding: 40px 30px 50px;
+      background: var(--primary);
+      padding: 40px 20px 60px;
       text-align: center;
       color: white;
       position: relative;
-      clip-path: ellipse(100% 100% at 50% 0%);
+      clip-path: ellipse(120% 100% at 50% 0%);
     }
     
     .profile-img {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 255, 255, 0.5);
+      border: 4px solid rgba(255,255,255,0.5);
       object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      transition: all 0.4s ease;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
     }
     
     .profile-img:hover {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
     
     .title {
-      font-size: 2rem;
-      font-weight: 900;
+      font-size: 1.8rem;
+      font-weight: 700;
       margin-bottom: 5px;
     }
     
     .subtitle {
-      font-size: 1.1rem;
+      font-size: 1rem;
       opacity: 0.9;
-      font-weight: 300;
     }
     
     .card-body {
-      padding: 30px;
+      padding: 30px 25px;
+      margin-top: -30px;
     }
     
     .links-container {
@@ -105,116 +82,87 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 25px;
+      padding: 15px 20px;
       background: white;
-      border-radius: 15px;
+      border-radius: 12px;
       text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      color: #333;
+      font-weight: 500;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
     }
     
     .social-link:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     
     .link-content {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
     }
     
     .icon-wrapper {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      transition: all 0.3s ease;
+      font-size: 20px;
     }
     
-    /* Platform Colors */
-    .whatsapp .icon-wrapper { background: rgba(37, 211, 102, 0.1); color: var(--whatsapp); }
-    .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
-    .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
-    .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: rgba(0, 0, 0, 0.1); color: var(--x); }
-    
-    /* X Logo Special Effect */
-    .x-logo {
+    /* X Icon Special Styling */
+    .x-icon {
       font-weight: bold;
+      position: relative;
+    }
+    
+    .x .icon-wrapper {
+      background: var(--x);
+      color: white;
     }
     
     .x:hover .icon-wrapper {
-      animation: xPulse 1.5s infinite;
+      animation: xSpin 0.8s ease;
     }
     
-    @keyframes xPulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    @keyframes xSpin {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(180deg); }
+      100% { transform: rotate(360deg); }
     }
     
     .arrow-icon {
       color: #999;
-      font-size: 16px;
       transition: all 0.3s ease;
     }
     
     .social-link:hover .arrow-icon {
       color: var(--primary);
-      transform: translateX(-8px);
+      transform: translateX(-5px);
     }
-    
-    /* Platform Hover Colors */
-    .whatsapp:hover { color: var(--whatsapp); }
-    .telegram:hover { color: var(--telegram); }
-    .instagram:hover { color: var(--instagram); }
-    .facebook:hover { color: var(--facebook); }
-    .x:hover { color: var(--x); }
     
     .watermark {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 25px;
       color: #999;
-      font-size: 0.9rem;
-    }
-    
-    @media (max-width: 600px) {
-      .card {
-        border-radius: 20px;
-      }
-      
-      .card-header {
-        padding: 30px 20px 40px;
-      }
-      
-      .profile-img {
-        width: 110px;
-        height: 110px;
-      }
-      
-      .title {
-        font-size: 1.8rem;
-      }
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="card-header">
-      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img">
+      <img src="https://abuzaid-designs.github.io/logo.png" alt="Logo" class="profile-img">
       <h1 class="title">Abu Zaid Designs</h1>
       <p class="subtitle">تواصل معنا</p>
     </div>
     
     <div class="card-body">
       <div class="links-container">
-        <a href="https://wa.me/201031423492" class="social-link whatsapp">
+        <a href="#" class="social-link whatsapp">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-whatsapp"></i>
@@ -224,7 +172,7 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
-        <a href="https://t.me/abuzaid_designs" class="social-link telegram">
+        <a href="#" class="social-link telegram">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-telegram-plane"></i>
@@ -234,32 +182,22 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
-        <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram">
+        <a href="#" class="social-link x">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-x-twitter x-icon"></i>
+            </div>
+            <span>X</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        
+        <a href="#" class="social-link instagram">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-instagram"></i>
             </div>
             <span>Instagram</span>
-          </div>
-          <i class="fas fa-arrow-left arrow-icon"></i>
-        </a>
-        
-        <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook">
-          <div class="link-content">
-            <div class="icon-wrapper">
-              <i class="fab fa-facebook-f"></i>
-            </div>
-            <span>Facebook</span>
-          </div>
-          <i class="fas fa-arrow-left arrow-icon"></i>
-        </a>
-        
-        <a href="https://x.com/abuzaid_designs" class="social-link x">
-          <div class="link-content">
-            <div class="icon-wrapper">
-              <i class="fab fa-x-twitter x-logo"></i>
-            </div>
-            <span>X</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
