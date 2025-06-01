@@ -1,108 +1,295 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abu Zaid Designs - روابط التواصل</title>
-
-  <!-- خط عربي احترافي -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <!-- أيقونة الموقع -->
-  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png" />
-
-  <!-- بيانات المشاركة -->
+  
+  <!-- خطوط Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
+  
+  <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Abu Zaid Designs">
-  <meta property="og:description" content="روابط التواصل مع Abu Zaid Designs - واتساب، فيسبوك، إنستقرام، تويتر، والمزيد.">
+  <meta property="og:description" content="روابط التواصل مع أبو زيد للتصميمات">
   <meta property="og:image" content="https://abuzaid-designs.github.io/logo.png">
   <meta property="og:url" content="https://abuzaid-designs.github.io/">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Abu Zaid Designs">
-  <meta name="twitter:description" content="روابط التواصل مع Abu Zaid Designs - واتساب، فيسبوك، إنستقرام، تويتر، والمزيد.">
-  <meta name="twitter:image" content="https://abuzaid-designs.github.io/logo.png">
-
+  
   <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 20px;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #f59e0b;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --success: #10b981;
+      --whatsapp: #25d366;
+      --instagram: #e1306c;
+      --facebook: #1877f2;
+      --twitter: #1da1f2;
+      --telegram: #0088cc;
+      --threads: #000000;
+    }
+    
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
     }
-
-    .container {
-      max-width: 400px;
-      margin: auto;
+    
+    body {
+      background-color: #f1f5f9;
+      background-image: 
+        radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.2) 0px, transparent 50%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: var(--dark);
+    }
+    
+    .card {
+      width: 100%;
+      max-width: 480px;
       background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: transform 0.3s ease;
     }
-
-    h1 {
-      color: #333;
-      font-size: 20px;
-      margin-bottom: 20px;
+    
+    .card:hover {
+      transform: translateY(-5px);
     }
-
-    .link-button {
+    
+    .card-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      padding: 30px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    
+    .card-body {
+      padding: 30px;
+    }
+    
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .social-link {
       display: flex;
       align-items: center;
-      justify-content: right;
-      gap: 10px;
-      background: #007bff;
-      color: white;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background: white;
+      border-radius: 12px;
       text-decoration: none;
-      margin: 8px 0;
-      padding: 12px 15px;
-      border-radius: 8px;
-      transition: background 0.3s, transform 0.2s;
-      font-size: 16px;
+      color: var(--dark);
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-
-    .link-button i {
+    
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .social-link:hover::before {
+      width: 8px;
+    }
+    
+    .link-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
     }
-
-    .link-button:hover {
-      background: #0056b3;
-      transform: scale(1.03);
+    
+    .whatsapp .icon-wrapper { background: rgba(37, 211, 102, 0.1); color: var(--whatsapp); }
+    .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
+    .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
+    .twitter .icon-wrapper { background: rgba(29, 161, 242, 0.1); color: var(--twitter); }
+    .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
+    .threads .icon-wrapper { background: rgba(0, 0, 0, 0.1); color: var(--threads); }
+    
+    .arrow-icon {
+      color: var(--gray);
+      font-size: 14px;
+      transition: transform 0.3s ease;
     }
-
-    img.logo {
-      width: 100px;
-      margin-bottom: 15px;
+    
+    .social-link:hover .arrow-icon {
+      transform: translateX(-5px);
+      color: var(--primary);
+    }
+    
+    .watermark {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    
+    @media (max-width: 480px) {
+      .card {
+        border-radius: 16px;
+      }
+      
+      .card-header {
+        padding: 25px 20px;
+      }
+      
+      .card-body {
+        padding: 25px 20px;
+      }
+      
+      .title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img class="logo" src="https://abuzaid-designs.github.io/logo.png" alt="شعار Abu Zaid Designs" />
-    <h1>روابط التواصل مع <span style="color:#007bff;">Abu Zaid Designs</span></h1>
-
-    <a class="link-button" href="https://wa.me/201031423492" target="_blank">
-      <i class="fab fa-whatsapp"></i> واتساب أعمال
-    </a>
-    <a class="link-button" href="https://www.instagram.com/abuzaid_designs/" target="_blank">
-      <i class="fab fa-instagram"></i> إنستقرام
-    </a>
-    <a class="link-button" href="https://www.facebook.com/profile.php?id=61576688616675" target="_blank">
-      <i class="fab fa-facebook-f"></i> فيسبوك
-    </a>
-    <a class="link-button" href="https://x.com/abuzaid_designs" target="_blank">
-      <i class="fab fa-x-twitter"></i> تويتر (X)
-    </a>
-    <a class="link-button" href="https://t.me/abuzaid_designs" target="_blank">
-      <i class="fab fa-telegram-plane"></i> تليجرام
-    </a>
-    <a class="link-button" href="https://www.threads.net/@abuzaid_designs" target="_blank">
-      <i class="fas fa-thread"></i> Threads
-    </a>
+  <div class="card">
+    <div class="card-header">
+      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img">
+      <h1 class="title">Abu Zaid Designs</h1>
+      <p class="subtitle">روابط التواصل الاجتماعي</p>
+    </div>
+    
+    <div class="card-body">
+      <div class="links-container">
+        <a href="https://wa.me/201031423492" class="social-link whatsapp" target="_blank">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <span>واتساب أعمال</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        
+        <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram" target="_blank">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <span>إنستغرام</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        
+        <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook" target="_blank">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <span>فيسبوك</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        
+        <a href="https://x.com/abuzaid_designs" class="social-link twitter" target="_blank">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-x-twitter"></i>
+            </div>
+            <span>تويتر (X)</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        
+        <a href="https://t.me/abuzaid_designs" class="social-link telegram" target="_blank">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-telegram-plane"></i>
+            </div>
+            <span>تيليجرام</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        
+        <a href="https://www.threads.net/@abuzaid_designs" class="social-link threads" target="_blank">
+          <div class="link-content">
+            <div class="icon-wrapper">
+              <i class="fab fa-threads"></i>
+            </div>
+            <span>Threads</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+      </div>
+      
+      <div class="watermark">
+        © 2023 Abu Zaid Designs. جميع الحقوق محفوظة
+      </div>
+    </div>
   </div>
 </body>
 </html>
