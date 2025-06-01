@@ -1,6 +1,3 @@
-Here's the complete HTML code with all the requested modifications:
-
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -672,7 +669,7 @@ Here's the complete HTML code with all the requested modifications:
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><img src="logo-X.png" alt="X Logo" style="width: 20px; height: 20px;" /></div>
+              <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -842,7 +839,7 @@ Here's the complete HTML code with all the requested modifications:
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <img src="logo-X.png" alt="X Logo" style="width: 20px; height: 20px;">
+            <i class="fab fa-x-twitter"></i>
           </a>
         </div>
         
@@ -879,13 +876,9 @@ Here's the complete HTML code with all the requested modifications:
           <button type="submit" class="btn btn-primary" id="submitBtn">إرسال الرسالة</button>
         </div>
         
-        <div class="footer-message" style="margin-top: 25px; display: flex; justify-content: center; gap: 15px; align-items: center;">
-          <span>للتواصل السريع:</span>
-          <a href="tel:+201031423492" style="color: var(--primary); text-decoration: none; font-weight: 600;">+20 103 142 3492</a>
-          <span>أو</span>
-          <a href="https://wa.me/201031423492" class="btn btn-outline" style="padding: 8px 15px; font-size: 0.9rem;">
-            <i class="fab fa-whatsapp"></i> واتساب
-          </a>
+        <div class="footer-message" style="margin-top: 25px;">
+          للتواصل السريع عبر واتساب: 
+          <a href="https://wa.me/201031423492" style="color: var(--primary); text-decoration: none; font-weight: 600;">اضغط هنا</a>
         </div>
       </div>
     </div>
@@ -926,4 +919,11 @@ Here's the complete HTML code with all the requested modifications:
         const service = document.getElementById('service').value;
         const message = document.getElementById('message').value;
         
-        const whatsappMessage = `مرحباً، أريد است
+        const whatsappMessage = `مرحباً، أريد استشارة تصميمية%0A%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع الخدمة: ${service}%0Aالرسالة: ${message}`;
+        
+        window.open(`https://wa.me/201031423492?text=${whatsappMessage}`, '_blank');
+      });
+    }
+  </script>
+</body>
+</html>
