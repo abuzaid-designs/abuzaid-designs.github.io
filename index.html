@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abu Zaid Designs - تصميمات إبداعية احترافية</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -213,6 +213,8 @@
     .x .icon-wrapper { background: transparent; }
     .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
     .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
+    .portfolio .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
+    .threads .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
 
     .social-link:hover .icon-wrapper {
       transform: scale(1.1);
@@ -236,7 +238,22 @@
     .x:hover { color: var(--x-blue); }
     .youtube:hover { color: var(--youtube); }
     .behance:hover { color: var(--behance); }
+    .threads:hover { color: var(--dark); }
 
+    /* التعديلات على أيقونة X */
+    .x .icon-wrapper img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .x-icon img {
+      width: 22px;
+      height: 22px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* باقي الستايلات كما هي */
     .about-text, .service-item {
       margin-bottom: 15px;
       line-height: 1.7;
@@ -584,13 +601,6 @@
     .telegram-icon { background: var(--telegram); }
     .x-icon { background: var(--x); }
 
-    .custom-icon-x {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-    }
-
     @media (max-width: 600px) {
       body {
         padding: 15px;
@@ -663,7 +673,7 @@
           <a href="https://wa.me/201031423492" class="social-link whatsapp" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
-              <span>WhatsApp</span>
+              <span>WhatsApp <span class="badge">سريع</span></span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
@@ -694,7 +704,7 @@
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png" alt="X" class="custom-icon-x"></div>
+              <div class="icon-wrapper"><img src="logo-X.png" alt="X"></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -864,7 +874,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png" alt="X" class="custom-icon-x">
+            <img src="logo-X.png" alt="X">
           </a>
         </div>
         
@@ -898,7 +908,7 @@
             <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية" required></textarea>
           </div>
           
-          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال</button>
+          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال الرسالة</button>
         </div>
         
         <div class="footer-message" style="margin-top: 25px;">
@@ -920,18 +930,4 @@
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value;
 
-      if (!name || !phone || !service) {
-        alert('الرجاء إدخال البيانات المطلوبة');
-        return;
-      }
-
-      const whatsappMessage = `
-        *طلب تصميم جديد*
-        ===================
-        *الاسم:* ${name}
-        *رقم الهاتف:* ${phone}
-        *نوع الخدمة:* ${service}
-        *تفاصيل الطلب:*
-        ${message || 'لا توجد تفاصيل إضافية'}
-        ===================
-        تم
+      if (!name || !phone || !service ||
