@@ -1,3 +1,6 @@
+Here's the updated HTML code with all the requested changes:
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -195,7 +198,7 @@
       gap: 15px;
     }
 
-     .icon-wrapper {
+    .icon-wrapper {
       width: 45px;
       height: 45px;
       border-radius: 12px;
@@ -296,14 +299,7 @@
       text-align: center;
       color: var(--text-light);
       font-size: 0.95rem;
-      padding: 12px 25px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 50px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-      width: fit-content;
       margin: 0 auto 20px;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .btn {
@@ -353,7 +349,6 @@
       gap: 15px;
       margin-top: 20px;
     }
-
 
     .testimonial {
       background: white;
@@ -520,6 +515,17 @@
       resize: vertical;
     }
 
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      margin-left: 10px;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -628,6 +634,10 @@
         font-size: 1.3rem;
       }
 
+      .copyright {
+        font-size: 0.85rem;
+      }
+      
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
@@ -689,7 +699,7 @@
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
+              <div class="icon-wrapper"><img src="logo-X.png" alt="X"></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -859,7 +869,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <i class="fab fa-x-twitter"></i>
+            <img src="logo-X.png" alt="X">
           </a>
         </div>
         
@@ -895,7 +905,7 @@
           
           <div class="form-group">
             <label for="message" class="form-label">الرسالة</label>
-            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية" required></textarea>
+            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية"></textarea>
           </div>
           
           <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال</button>
@@ -921,15 +931,9 @@
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value;
 
-      if (!name || !phone || !service || !message) {
-        alert('الرجاء ملء جميع الحقول المطلوبة');
+      if (!name || !phone || !service) {
+        alert('الرجاء إدخال البيانات المطلوبة (الاسم، رقم الهاتف، نوع الخدمة)');
         return;
       }
 
-      const fullMessage = `مرحباً، أنا ${name}\n\nأريد خدمة: ${service}\n\nتفاصيل الطلب:\n${message}\n\nللتواصل:\nالهاتف: ${phone}\nالبريد: ${email || 'غير متوفر'}`;
-      
-      const encodedMessage = encodeURIComponent(fullMessage);
-      window.open(`https://wa.me/201031423492?text=${encodedMessage}`, '_blank');
-    }
-  </script>
-</body>
+      const whatsappMessage = `Abu Zaid Designs\n\nالاسم: ${name}\n\nالبريد الإلكتروني: ${email || 'لم يتم تقديمه'}\n\nرقم الهاتف: ${phone}\n\nالخدمة المطلوبة: ${service}\n\nالرسالة:
