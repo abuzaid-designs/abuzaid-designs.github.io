@@ -1,3 +1,6 @@
+سأقدم لك الكود الكامل بعد التعديلات المطلوبة مع الحفاظ على أيقونة X كما كانت وضبط شكل رسالة الواتساب:
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -210,7 +213,7 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: transparent; } /* تعديل هنا لجعلها شفافة */
+    .x .icon-wrapper { background: transparent; }
     .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
     .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
 
@@ -273,6 +276,20 @@
       margin-top: 15px;
       padding: 15px 0;
       line-height: 1.7;
+    }
+
+    .copyright {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      padding: 12px 25px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+      width: fit-content;
+      margin: 0 auto 20px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .btn {
@@ -574,7 +591,7 @@
       width: 22px;
       height: 22px;
       object-fit: contain;
-      filter: none; /* تعديل هنا لإزالة الفلتر */
+      filter: brightness(0) invert(1);
     }
 
     @media (max-width: 600px) {
@@ -612,6 +629,11 @@
 
       .section-title {
         font-size: 1.3rem;
+      }
+
+      .copyright {
+        font-size: 0.85rem;
+        padding: 10px 20px;
       }
       
       .portfolio-grid {
@@ -675,7 +697,7 @@
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><img src="logo-X.png" alt="X" class="custom-icon-x"></div>
+              <div class="icon-wrapper"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png" alt="X" class="custom-icon-x"></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -845,7 +867,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <img src="logo-X.png" alt="X" class="custom-icon-x">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png" alt="X" class="custom-icon-x">
           </a>
         </div>
         
@@ -890,7 +912,7 @@
     </div>
   </div>
 
-  <div style="text-align: center; color: var(--text-light); font-size: 0.95rem; margin: 20px 0;">
+  <div class="copyright">
     © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
   </div>
 
@@ -906,16 +928,13 @@
         return;
       }
 
-      const whatsappUrl = `https://wa.me/201031423492?text=
-        *طلب جديد من موقع Abu Zaid Designs*%0A%0A
-        *الاسم:* ${encodeURIComponent(name)}%0A
-        *رقم الهاتف:* ${encodeURIComponent(phone)}%0A
-        *الخدمة المطلوبة:* ${encodeURIComponent(service)}%0A
-        *الرسالة:* ${encodeURIComponent(message || 'لا توجد رسالة إضافية')}
-      `.replace(/\s+/g, '');
-
-      window.open(whatsappUrl, '_blank');
-    }
-  </script>
-</body>
-</html>
+      const whatsappMessage = `
+        *طلب تصميم جديد*
+        ===================
+        *الاسم:* ${name}
+        *رقم الهاتف:* ${phone}
+        *نوع الخدمة:* ${service}
+        *تفاصيل الطلب:*
+        ${message || 'لا توجد تفاصيل إضافية'}
+        ===================
+        تم
