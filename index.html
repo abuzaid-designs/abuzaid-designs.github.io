@@ -462,16 +462,17 @@
       color: var(--dark);
     }
 
-    .form-input, .form-textarea {
+    .form-input, .form-textarea, .form-select {
       padding: 12px 15px;
       border-radius: 10px;
       border: 1px solid #ddd;
       font-family: inherit;
       font-size: 1rem;
       transition: all 0.3s ease;
+      background-color: white;
     }
 
-    .form-input:focus, .form-textarea:focus {
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
@@ -553,6 +554,7 @@
     .instagram-icon { background: var(--instagram); }
     .facebook-icon { background: var(--facebook); }
     .telegram-icon { background: var(--telegram); }
+    .x-icon { background: var(--x); }
 
     @media (max-width: 600px) {
       body {
@@ -613,7 +615,7 @@
     <div class="card">
       <div class="card-header">
         <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img" />
-        <h1 class="title">أبو زيد ديزاينز</h1>
+        <h1 class="title">Abu Zaid Designs</h1>
         <p class="subtitle">إسلام أبو زيد - مصمم جرافيك محترف</p>
         <p class="tagline">تواصل معنا</p>
       </div>
@@ -624,6 +626,14 @@
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
               <span>WhatsApp <span class="badge">سريع</span></span>
+            </div>
+            <i class="fas fa-arrow-left arrow-icon"></i>
+          </a>
+          
+          <a href="https://t.me/abuzaid_designs" class="social-link telegram" target="_blank">
+            <div class="link-content">
+              <div class="icon-wrapper"><i class="fab fa-telegram-plane"></i></div>
+              <span>Telegram</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
@@ -644,17 +654,17 @@
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
           
-          <a href="https://t.me/abuzaid_designs" class="social-link telegram" target="_blank">
+          <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><i class="fab fa-telegram-plane"></i></div>
-              <span>Telegram</span>
+              <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
+              <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
         </div>
 
         <div class="footer-message">
-          تواصل معنا لتحصل على تصميمات إبداعية تعبر عن هويتك وتلفت الانتباه
+          تواصل معنا للحصول على تصميمات مبتكرة تعكس هويتك الفريدة وتلفت الأنظار بأناقة.
         </div>
       </div>
     </div>
@@ -664,7 +674,7 @@
       <div class="card-body">
         <h2 class="section-title"><i class="fas fa-user-tie"></i> من نحن</h2>
         <div class="about-text">
-          <p>أنا <strong>إسلام أبو زيد</strong>، مصمم جرافيك محترف بخبرة تزيد عن 3 سنوات في مجال التصميم الجرافيكي والهويات البصرية. أسست أبو زيد ديزاينز لتقديم حلول تصميمية متميزة تناسب احتياجات العملاء.</p>
+          <p>أنا <strong>إسلام أبو زيد</strong>، مصمم جرافيك محترف بخبرة تزيد عن 3 سنوات في مجال التصميم الجرافيكي والهويات البصرية. أسست Abu Zaid Designs لتقديم حلول تصميمية متميزة تناسب احتياجات العملاء.</p>
         </div>
         <div class="about-text">
           <p>نحن نؤمن بأن التصميم الجيد ليس مجرد شكل جميل، بل هو وسيلة فعّالة لإيصال الرسائل وتعزيز الهوية البصرية للعلامات التجارية والأفراد.</p>
@@ -800,14 +810,17 @@
           <a href="https://wa.me/201031423492" class="contact-icon whatsapp-icon" target="_blank">
             <i class="fab fa-whatsapp"></i>
           </a>
+          <a href="https://t.me/abuzaid_designs" class="contact-icon telegram-icon" target="_blank">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
           <a href="https://www.instagram.com/abuzaid_designs/" class="contact-icon instagram-icon" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
           <a href="https://www.facebook.com/profile.php?id=61576688616675" class="contact-icon facebook-icon" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://t.me/abuzaid_designs" class="contact-icon telegram-icon" target="_blank">
-            <i class="fab fa-telegram-plane"></i>
+          <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
+            <i class="fab fa-x-twitter"></i>
           </a>
         </div>
         
@@ -818,8 +831,22 @@
           </div>
           
           <div class="form-group">
-            <label for="email" class="form-label">البريد الإلكتروني</label>
-            <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني">
+            <label for="phone" class="form-label">رقم الهاتف</label>
+            <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك">
+          </div>
+          
+          <div class="form-group">
+            <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
+            <select id="service" class="form-select">
+              <option value="">اختر من القائمة</option>
+              <option value="شعار وهوية بصرية">شعار وهوية بصرية</option>
+              <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
+              <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
+              <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
+              <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
+              <option value="تصميمات سوشيال ميديا">تصميمات سوشيال ميديا</option>
+              <option value="أخرى">أخرى (حدد في الرسالة)</option>
+            </select>
           </div>
           
           <div class="form-group">
@@ -838,7 +865,7 @@
   </div>
 
   <div class="copyright">
-    © 2025 أبو زيد ديزاينز. جميع الحقوق محفوظة.
+    © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
   </div>
 
   <script>
@@ -868,10 +895,11 @@
         e.preventDefault();
         
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
         const message = document.getElementById('message').value;
         
-        const whatsappMessage = `مرحباً، أريد استشارة تصميمية%0A%0Aالاسم: ${name}%0Aالبريد الإلكتروني: ${email}%0Aالرسالة: ${message}`;
+        const whatsappMessage = `مرحباً، أريد استشارة تصميمية%0A%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع الخدمة: ${service}%0Aالرسالة: ${message}`;
         
         window.open(`https://wa.me/201031423492?text=${whatsappMessage}`, '_blank');
       });
