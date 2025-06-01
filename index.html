@@ -32,7 +32,7 @@
     }
 
     body {
-      background-color: #f8f9fa;
+      background-color: #f9f9f9;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -40,8 +40,9 @@
       align-items: center;
       padding: 20px;
       position: relative;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23FF7A00" opacity="0.05" width="50" height="50" x="25" y="25" rx="5" ry="5"/><path fill="%23FF7A00" opacity="0.1" d="M30,30 L70,30 L70,70 L30,70 Z" stroke="%23FF7A00" stroke-width="2" stroke-opacity="0.1"/></svg>');
-      background-size: 120px;
+      background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80');
+      background-size: cover;
+      background-position: center;
       background-attachment: fixed;
     }
 
@@ -52,24 +53,29 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+      background: rgba(255, 255, 255, 0.88);
       z-index: -1;
     }
 
     .card {
       width: 100%;
       max-width: 480px;
-      background: rgba(255, 255, 255, 0.97);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
       position: relative;
       margin-bottom: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(3px);
       transition: transform 0.3s ease;
     }
 
-    /* باقي الأكواد تبقى كما هي بدون تغيير */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
     .card-header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       padding: 35px 25px 45px;
@@ -80,13 +86,255 @@
       overflow: hidden;
     }
 
-    /* ... باقي الأكواد CSS تبقى كما هي ... */
+    .card-header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
 
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.5);
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      opacity: 0.95;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-body {
+      padding: 30px 30px 20px;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 22px;
+      background: white;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .link-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .icon-wrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp .icon-wrapper { background: rgba(37, 211, 102, 0.1); color: var(--whatsapp); }
+    .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
+    .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
+    .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
+    .x .icon-wrapper { 
+      background: rgba(0, 0, 0, 0.08); 
+      color: var(--x);
+      position: relative;
+    }
+
+    .social-link:hover .icon-wrapper {
+      transform: scale(1.1);
+    }
+
+    .arrow-icon {
+      color: #aaa;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover .arrow-icon {
+      color: var(--primary);
+      transform: translateX(-5px);
+    }
+
+    .whatsapp:hover { color: var(--whatsapp); }
+    .telegram:hover { color: var(--telegram); }
+    .instagram:hover { color: var(--instagram); }
+    .facebook:hover { color: var(--facebook); }
+    .x:hover { color: var(--x-blue); }
+
+    .footer-message {
+      text-align: center;
+      font-weight: 500;
+      color: #555;
+      font-size: 1.05rem;
+      margin-top: 15px;
+      padding: 15px 25px 25px;
+      line-height: 1.7;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #666;
+      font-size: 0.95rem;
+      padding: 12px 25px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+      width: fit-content;
+      margin: 0 auto;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+        background-attachment: scroll;
+        background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
+      }
+      
+      .card { 
+        border-radius: 22px;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      
+      .card-header { 
+        padding: 30px 20px 40px; 
+        clip-path: ellipse(140% 100% at 50% 0%);
+      }
+      
+      .profile-img { 
+        width: 110px; 
+        height: 110px; 
+      }
+      
+      .title { 
+        font-size: 1.8rem; 
+      }
+      
+      .subtitle {
+        font-size: 1.05rem;
+      }
+      
+      .card-body {
+        padding: 25px 20px 15px;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- باقي محتوى HTML يبقى كما هو -->
+  <div class="card">
+    <div class="card-header">
+      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img" />
+      <h1 class="title">Abu Zaid Designs</h1>
+      <p class="subtitle">تواصل معنا</p>
+    </div>
+
+    <div class="card-body">
+      <div class="links-container">
+        <a href="https://wa.me/201031423492" class="social-link whatsapp">
+          <div class="link-content">
+            <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
+            <span>WhatsApp</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        <a href="https://t.me/abuzaid_designs" class="social-link telegram">
+          <div class="link-content">
+            <div class="icon-wrapper"><i class="fab fa-telegram-plane"></i></div>
+            <span>Telegram</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram">
+          <div class="link-content">
+            <div class="icon-wrapper"><i class="fab fa-instagram"></i></div>
+            <span>Instagram</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook">
+          <div class="link-content">
+            <div class="icon-wrapper"><i class="fab fa-facebook-f"></i></div>
+            <span>Facebook</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+        <a href="https://x.com/abuzaid_designs" class="social-link x">
+          <div class="link-content">
+            <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
+            <span>X (Twitter)</span>
+          </div>
+          <i class="fas fa-arrow-left arrow-icon"></i>
+        </a>
+      </div>
+
+      <div class="footer-message">
+        التصميم فن، والتميز أسلوب.<br>
+        Design is art, and excellence is a lifestyle.
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 Abu Zaid Designs. جميع الحقوق محفوظة
+  </div>
 
 </body>
 </html>
