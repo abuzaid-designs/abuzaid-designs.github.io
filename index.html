@@ -1,57 +1,100 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>تصاميم أبو زيد</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تصاميم أبو زيد | روابط التواصل</title>
+
+  <!-- خط عربي احترافي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- أيقونة الموقع -->
+  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png" />
+
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
       text-align: center;
       padding: 50px 20px;
-      background-color: #f5f7fa;
-      color: #333;
+      direction: rtl;
+      margin: 0;
+      color: #fff;
     }
-    img {
-      max-width: 180px;
+
+    .container {
+      max-width: 480px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 35px 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2.2rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    img.logo {
+      width: 140px;
       margin-bottom: 30px;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      transition: transform 0.4s ease;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #222;
+
+    img.logo:hover {
+      transform: rotate(10deg) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     }
-    p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      color: #555;
-    }
-    a {
-      display: inline-block;
-      margin: 12px 15px;
-      padding: 12px 25px;
-      font-size: 1.1rem;
+
+    .link-button {
+      display: block;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
       color: white;
-      background-color: #0077cc;
-      border-radius: 8px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0, 119, 204, 0.4);
+      margin: 15px 0;
+      padding: 16px 0;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.5);
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.25s ease;
+      user-select: none;
     }
-    a:hover {
-      background-color: #005fa3;
-      box-shadow: 0 4px 10px rgba(0, 95, 163, 0.6);
+
+    .link-button:hover {
+      background: linear-gradient(45deg, #ee0979, #ff6a00);
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.8);
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .link-button:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="لوغو تصاميم أبو زيد" />
-  <h1>مرحباً بك في تصاميم أبو زيد</h1>
-  <p>روابط التواصل:</p>
-  <a href="https://www.facebook.com/abuzaiddesigns" target="_blank" rel="noopener noreferrer">فيسبوك</a>
-  <a href="https://www.instagram.com/abuzaiddesigns" target="_blank" rel="noopener noreferrer">إنستجرام</a>
-  <a href="https://twitter.com/abuzaiddesigns" target="_blank" rel="noopener noreferrer">تويتر</a>
-  <a href="mailto:contact@abuzaiddesigns.com">البريد الإلكتروني</a>
-</body>
-</html>
+  <div class="container">
+    <img class="logo" src="https://abuzaid-designs.github.io/logo.png" alt="شعار تصاميم أبو زيد" />
+    <h1>روابط التواصل مع تصاميم أبو زيد</h1>
+
+    <a class="link-button" href="https://wa.me/201031423492" target="_blank" rel="noopener noreferrer">واتساب أعمال</a>
+    <a class="link-button" href="https://www.instagram.com/abuzaid_designs/" target="_blank" rel="noopener noreferrer">إنستجرام</a>
+    <a class="link-button" href="https://www.facebook.com/profile.php?id=61576688616675" target="_blank" rel="noopener noreferrer">فيسبوك</a>
+    <a class="link-button" href="https://x.com/abuzaid_designs" target="_blank" rel="noopener noreferrer">تويتر (X)</a>
+    <a class="link-button" href="https://t.me/abuzaid_designs" target="_blank" rel="noopener noreferrer">تليجرام</a>
+    <a class="link-button" href="https://www.threads.net/@abuzaid_designs" target="_blank" re
