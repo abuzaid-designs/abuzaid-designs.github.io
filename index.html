@@ -210,7 +210,7 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: transparent; }
+    .x .icon-wrapper { background: rgba(0, 0, 0, 0.1); color: var(--x); }
     .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
     .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
     .portfolio .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
@@ -240,20 +240,6 @@
     .behance:hover { color: var(--behance); }
     .threads:hover { color: var(--dark); }
 
-    /* التعديلات على أيقونة X */
-    .x .icon-wrapper img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-    }
-
-    .x-icon img {
-      width: 22px;
-      height: 22px;
-      filter: brightness(0) invert(1);
-    }
-
-    /* باقي الستايلات كما هي */
     .about-text, .service-item {
       margin-bottom: 15px;
       line-height: 1.7;
@@ -290,20 +276,6 @@
       margin-top: 15px;
       padding: 15px 0;
       line-height: 1.7;
-    }
-
-    .copyright {
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.95rem;
-      padding: 12px 25px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 50px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-      width: fit-content;
-      margin: 0 auto 20px;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .btn {
@@ -519,17 +491,6 @@
       resize: vertical;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      margin-left: 10px;
-    }
-
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -638,11 +599,6 @@
         font-size: 1.3rem;
       }
 
-      .copyright {
-        font-size: 0.85rem;
-        padding: 10px 20px;
-      }
-      
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
@@ -673,7 +629,7 @@
           <a href="https://wa.me/201031423492" class="social-link whatsapp" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
-              <span>WhatsApp <span class="badge">سريع</span></span>
+              <span>WhatsApp</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
@@ -704,7 +660,7 @@
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><img src="logo-X.png" alt="X"></div>
+              <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -874,7 +830,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <img src="logo-X.png" alt="X">
+            <i class="fab fa-x-twitter"></i>
           </a>
         </div>
         
@@ -882,6 +838,11 @@
           <div class="form-group">
             <label for="name" class="form-label">الاسم بالكامل</label>
             <input type="text" id="name" class="form-input" placeholder="أدخل اسمك" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">البريد الإلكتروني</label>
+            <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني">
           </div>
           
           <div class="form-group">
@@ -908,7 +869,7 @@
             <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية" required></textarea>
           </div>
           
-          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال الرسالة</button>
+          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال</button>
         </div>
         
         <div class="footer-message" style="margin-top: 25px;">
@@ -926,8 +887,21 @@
   <script>
     function sendToWhatsApp() {
       const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value;
 
-      if (!name || !phone || !service ||
+      if (!name || !phone || !service || !message) {
+        alert('الرجاء ملء جميع الحقول المطلوبة');
+        return;
+      }
+
+      const fullMessage = `مرحباً، أنا ${name}\n\nأريد خدمة: ${service}\n\nتفاصيل الطلب:\n${message}\n\nللتواصل:\nالهاتف: ${phone}\nالبريد: ${email || 'غير متوفر'}`;
+      
+      const encodedMessage = encodeURIComponent(fullMessage);
+      window.open(`https://wa.me/201031423492?text=${encodedMessage}`, '_blank');
+    }
+  </script>
+</body>
+</html>
