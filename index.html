@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abu Zaid Designs - تصميمات إبداعية</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abu Zaid Designs - تصميمات إبداعية احترافية</title>
   <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
@@ -16,6 +16,7 @@
     :root {
       --primary: #FF7A00;
       --primary-dark: #E56A00;
+      --primary-light: #FFF3E8;
       --dark: #1F2937;
       --light: #f9f9f9;
       --whatsapp: #25D366;
@@ -24,8 +25,13 @@
       --facebook: #1877F2;
       --x: #000000;
       --x-blue: #1DA1F2;
+      --youtube: #FF0000;
+      --behance: #1769FF;
       --section-bg: rgba(255, 255, 255, 0.97);
       --text-color: #333;
+      --text-light: #666;
+      --border-radius: 16px;
+      --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -57,7 +63,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(255, 122, 0, 0.08) 0%, rgba(255, 255, 255, 0.92) 100%);
+      background: linear-gradient(135deg, rgba(255, 122, 0, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%);
       z-index: -1;
     }
 
@@ -69,18 +75,18 @@
     .card {
       width: 100%;
       background: var(--section-bg);
-      border-radius: 25px;
+      border-radius: var(--border-radius);
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-      margin-bottom: 30px;
+      box-shadow: var(--box-shadow);
+      margin-bottom: 25px;
       border: 1px solid rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(3px);
-      transition: transform 0.3s ease;
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     }
 
     .card-header {
@@ -131,6 +137,14 @@
       font-size: 1.15rem;
       opacity: 0.95;
       font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 300;
+      margin-top: 10px;
     }
 
     .section-title {
@@ -139,6 +153,9 @@
       margin-bottom: 20px;
       padding-right: 15px;
       border-right: 4px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .card-body {
@@ -194,8 +211,10 @@
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
     .x .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--x); }
-    .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: #FF0000; }
+    .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
+    .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
     .portfolio .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
+    .threads .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
 
     .social-link:hover .icon-wrapper {
       transform: scale(1.1);
@@ -217,29 +236,42 @@
     .instagram:hover { color: var(--instagram); }
     .facebook:hover { color: var(--facebook); }
     .x:hover { color: var(--x-blue); }
-    .youtube:hover { color: #FF0000; }
+    .youtube:hover { color: var(--youtube); }
+    .behance:hover { color: var(--behance); }
+    .threads:hover { color: var(--dark); }
 
     .about-text, .service-item {
       margin-bottom: 15px;
       line-height: 1.7;
-      color: #555;
+      color: var(--text-color);
     }
 
     .service-item {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.1);
+    }
+
+    .service-item:last-child {
+      border-bottom: none;
     }
 
     .service-icon {
       color: var(--primary);
       font-size: 1.2rem;
+      margin-top: 3px;
+    }
+
+    .service-text {
+      flex: 1;
     }
 
     .footer-message {
       text-align: center;
       font-weight: 500;
-      color: #555;
+      color: var(--text-light);
       font-size: 1.05rem;
       margin-top: 15px;
       padding: 15px 0;
@@ -248,47 +280,228 @@
 
     .copyright {
       text-align: center;
-      color: #666;
+      color: var(--text-light);
       font-size: 0.95rem;
       padding: 12px 25px;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 50px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.06);
       width: fit-content;
-      margin: 0 auto;
+      margin: 0 auto 20px;
       backdrop-filter: blur(5px);
       border: 1px solid rgba(0,0,0,0.05);
     }
 
-    .download-btn {
+    .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 12px 20px;
-      background: var(--primary);
-      color: white;
+      padding: 12px 24px;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
-      margin-top: 15px;
       transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
-    .download-btn:hover {
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
       background: var(--primary-dark);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+    }
+
+    .btn-block {
+      display: flex;
+      width: 100%;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+      line-height: 1.7;
+      color: var(--text-color);
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .author-name {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .author-title {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .rating {
+      color: var(--primary);
+      margin-top: 5px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .portfolio-item {
+      aspect-ratio: 1;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.03);
+    }
+
+    .portfolio-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover .portfolio-img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 15px;
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+
+    .portfolio-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .portfolio-category {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .form-input, .form-textarea {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      margin-left: 10px;
     }
 
     @media (max-width: 600px) {
       body {
         padding: 15px;
         background-attachment: scroll;
-        background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
       }
 
       .card { 
-        border-radius: 22px;
+        border-radius: 14px;
         margin-bottom: 20px;
       }
 
@@ -322,142 +535,212 @@
         font-size: 0.85rem;
         padding: 10px 20px;
       }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- بطاقة التواصل -->
+    <!-- Main Profile Card -->
     <div class="card">
       <div class="card-header">
         <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img" />
         <h1 class="title">Abu Zaid Designs</h1>
-        <p class="subtitle">تصميمات إبداعية احترافية</p>
+        <p class="subtitle">إسلام أبو زيد - مصمم جرافيك محترف</p>
+        <p class="tagline">التصميم فن، والتميز أسلوب</p>
       </div>
 
       <div class="card-body">
         <div class="links-container">
-          <a href="https://wa.me/201031423492" class="social-link whatsapp">
+          <a href="https://wa.me/201031423492" class="social-link whatsapp" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
-              <span>WhatsApp</span>
+              <span>واتساب الأعمال <span class="badge">سريع</span></span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
-          <a href="https://t.me/abuzaid_designs" class="social-link telegram">
+          
+          <a href="https://t.me/abuzaid_designs" class="social-link telegram" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-telegram-plane"></i></div>
-              <span>Telegram</span>
+              <span>تلجرام</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
-          <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram">
+          
+          <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-instagram"></i></div>
-              <span>Instagram</span>
+              <span>إنستجرام</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook">
+          
+          <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-facebook-f"></i></div>
-              <span>Facebook</span>
+              <span>فيسبوك</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
-          <a href="https://x.com/abuzaid_designs" class="social-link x">
+          
+          <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-x-twitter"></i></div>
-              <span>X (Twitter)</span>
+              <span>تويتر (X)</span>
+            </div>
+            <i class="fas fa-arrow-left arrow-icon"></i>
+          </a>
+          
+          <a href="https://www.threads.net/@abuzaid_designs" class="social-link threads" target="_blank">
+            <div class="link-content">
+              <div class="icon-wrapper"><i class="fab fa-threads"></i></div>
+              <span>ثريدز</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
         </div>
 
         <div class="footer-message">
-          التصميم فن، والتميز أسلوب.<br>
-          Design is art, and excellence is a lifestyle.
+          تواصل معنا لتحصل على تصميمات إبداعية تعبر عن هويتك وتلفت الانتباه
         </div>
       </div>
     </div>
 
-    <!-- بطاقة من نحن -->
+    <!-- About Card -->
     <div class="card">
       <div class="card-body">
-        <h2 class="section-title">🎨 من نحن</h2>
+        <h2 class="section-title"><i class="fas fa-user-tie"></i> من نحن</h2>
         <div class="about-text">
-          <p>أنا إسلام أبو زيد، مصمم جرافيك بخبرة تزيد عن 3 سنوات، متخصص في تصميم الشعارات، الهويات البصرية، الإعلانات والمطبوعات التجارية.</p>
+          <p>أنا <strong>إسلام أبو زيد</strong>، مصمم جرافيك محترف بخبرة تزيد عن 3 سنوات في مجال التصميم الجرافيكي والهويات البصرية. أسست أبو زيد ديزاينز لتقديم حلول تصميمية متميزة تناسب احتياجات العملاء.</p>
         </div>
         <div class="about-text">
-          <p>Abu Zaid Designs هو استوديو تصميم إبداعي مستقل متخصص في تقديم حلول تصميم احترافية تناسب الأفراد والشركات على حد سواء.</p>
+          <p>نحن نؤمن بأن التصميم الجيد ليس مجرد شكل جميل، بل هو وسيلة فعّالة لإيصال الرسائل وتعزيز الهوية البصرية للعلامات التجارية والأفراد.</p>
         </div>
-        <div class="about-text">
-          <p>نمتلك خبرة عملية في تصميم الشعارات، الإعلانات المطبوعة، دعوات المناسبات، أغلفة الكتب والملازم، بالإضافة إلى خدمات تحويل النصوص المكتوبة إلى ملفات رقمية (Word وExcel).</p>
-        </div>
-        <div class="about-text">
-          <p>نؤمن أن التصميم ليس مجرد شكل جميل، بل هو وسيلة فعّالة للتعبير عن الهوية، وإيصال الرسائل، وجذب الانتباه.</p>
+        
+        <div class="btn-group">
+          <a href="#services" class="btn btn-outline">خدماتنا</a>
+          <a href="#portfolio" class="btn btn-outline">معرض الأعمال</a>
         </div>
       </div>
     </div>
 
-    <!-- بطاقة الخدمات -->
-    <div class="card">
+    <!-- Services Card -->
+    <div class="card" id="services">
       <div class="card-body">
-        <h2 class="section-title">🛠️ خدماتنا</h2>
+        <h2 class="section-title"><i class="fas fa-paint-brush"></i> خدماتنا</h2>
         
         <div class="service-item">
           <i class="fas fa-palette service-icon"></i>
-          <span>تصميم الشعارات وهويات العلامة التجارية</span>
+          <div class="service-text">
+            <strong>تصميم الشعارات والهويات البصرية</strong>
+            <p>تصميم شعارات مميزة تعبر عن هوية علامتك التجارية مع دليل استخدام كامل</p>
+          </div>
         </div>
         
         <div class="service-item">
           <i class="fas fa-ad service-icon"></i>
-          <span>تصميم اليفط والإعلانات التجارية والمطبوعة</span>
+          <div class="service-text">
+            <strong>تصميم الإعلانات والمطبوعات</strong>
+            <p>إعلانات مطبوعة، لافتات، بروشورات، فلايرات، ومنشورات ترويجية احترافية</p>
+          </div>
         </div>
         
         <div class="service-item">
           <i class="fas fa-envelope-open-text service-icon"></i>
-          <span>تصميم كروت الأفراح والدعوات</span>
+          <div class="service-text">
+            <strong>تصميم كروت الأفراح والدعوات</strong>
+            <p>تصميمات فريدة لدعوات الزفاف، المواليد، والمناسبات الخاصة بك</p>
+          </div>
         </div>
         
         <div class="service-item">
           <i class="fas fa-book-open service-icon"></i>
-          <span>تصميم أغلفة الكتب والملازم الدراسية</span>
+          <div class="service-text">
+            <strong>تصميم أغلفة الكتب والملازم</strong>
+            <p>أغلفة جذابة للكتب الدراسية، الروايات، الأبحاث والملازم التعليمية</p>
+          </div>
         </div>
         
         <div class="service-item">
           <i class="fas fa-file-word service-icon"></i>
-          <span>تنسيق وتحويل النصوص من صور إلى Word/Excel</span>
+          <div class="service-text">
+            <strong>تحويل النصوص إلى ملفات رقمية</strong>
+            <p>تحويل المستندات الورقية أو الصور إلى ملفات Word وExcel قابلة للتعديل</p>
+          </div>
         </div>
         
         <div class="service-item">
           <i class="fas fa-hashtag service-icon"></i>
-          <span>تصميمات مناسبة للسوشيال ميديا والعروض الترويجية</span>
+          <div class="service-text">
+            <strong>تصميمات السوشيال ميديا</strong>
+            <p>تصميم منشورات، ستوريات، بانرات، وإعلانات لوسائل التواصل الاجتماعي</p>
+          </div>
         </div>
+        
+        <a href="#contact" class="btn btn-primary btn-block" style="margin-top: 20px;">اطلب خدمتك الآن</a>
       </div>
     </div>
 
-    <!-- بطاقة معرض الأعمال -->
-    <div class="card">
+    <!-- Portfolio Card -->
+    <div class="card" id="portfolio">
       <div class="card-body">
-        <h2 class="section-title">📂 معرض الأعمال</h2>
+        <h2 class="section-title"><i class="fas fa-images"></i> معرض الأعمال</h2>
         <div class="about-text">
-          <p>يمكنك مشاهدة نماذج من أعمالنا السابقة عبر المنصات التالية:</p>
+          <p>تصفح بعضاً من أعمالنا السابقة التي نفخر بها:</p>
+        </div>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Logo Design" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">تصميم شعار</div>
+              <div class="portfolio-category">هوية بصرية</div>
+            </div>
+          </div>
+          
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Wedding Invitation" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">كارت زفاف</div>
+              <div class="portfolio-category">دعوات</div>
+            </div>
+          </div>
+          
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1601933470096-0e34634ffcde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Social Media Post" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">منشور إنستجرام</div>
+              <div class="portfolio-category">سوشيال ميديا</div>
+            </div>
+          </div>
+          
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1545230976-55d8a6e9c91e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Book Cover" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <div class="portfolio-title">غلاف كتاب</div>
+              <div class="portfolio-category">مطبوعات</div>
+            </div>
+          </div>
         </div>
         
         <div class="links-container" style="margin-top: 20px;">
-          <a href="https://behance.net/abuzaid_designs" class="social-link portfolio">
+          <a href="https://behance.net/abuzaid_designs" class="social-link behance" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-behance"></i></div>
-              <span>Behance Portfolio</span>
+              <span>معرض أعمالنا على Behance</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
-          <a href="https://youtube.com/@abuzaid_designs" class="social-link youtube">
+          
+          <a href="https://youtube.com/@abuzaid_designs" class="social-link youtube" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-youtube"></i></div>
-              <span>YouTube Channel</span>
+              <span>قناتنا على يوتيوب</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
@@ -465,16 +748,90 @@
       </div>
     </div>
 
-    <!-- بطاقة تحميل البروشور -->
+    <!-- Testimonials Card -->
     <div class="card">
       <div class="card-body">
-        <h2 class="section-title">📥 حمل بروشورنا</h2>
+        <h2 class="section-title"><i class="fas fa-star"></i> آراء العملاء</h2>
+        
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "تعاملت مع أبو زيد ديزاينز لتصميم شعار لمطعمي الجديد، وكانت النتيجة رائعة! الشعار يعبر تماماً عن هوية المطعم وحصل على إعجاب الجميع."
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Mohamed" class="author-avatar">
+            <div class="author-info">
+              <div class="author-name">أحمد محمد</div>
+              <div class="author-title">صاحب مطعم</div>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "تصميمات دعوات زفافي كانت أكثر من رائعة! الاحترافية في التنفيذ والاهتمام بأدق التفاصيل جعلت المناسبة مميزة."
+          </div>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mona Ali" class="author-avatar">
+            <div class="author-info">
+              <div class="author-name">منى علي</div>
+              <div class="author-title">عميلة</div>
+              <div class="rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Card -->
+    <div class="card" id="contact">
+      <div class="card-body">
+        <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معنا</h2>
+        <div class="about-text">
+          <p>للاستفسارات أو طلب الخدمات، يمكنك التواصل معنا عبر:</p>
+        </div>
+        
+        <div class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">الاسم بالكامل</label>
+            <input type="text" id="name" class="form-input" placeholder="أدخل اسمك">
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">البريد الإلكتروني</label>
+            <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني">
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">الرسالة</label>
+            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+        </div>
+        
+        <div class="footer-message" style="margin-top: 25px;">
+          للتواصل السريع: <a href="tel:+201031423492" style="color: var(--primary); text-decoration: none;">+20 103 142 3492</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brochure Card -->
+    <div class="card">
+      <div class="card-body">
+        <h2 class="section-title"><i class="fas fa-file-download"></i> حمل بروشورنا</h2>
         <div class="about-text">
           <p>يمكنك تحميل البروشور التعريفي لمعرفة المزيد عن خدماتنا وأسعارنا:</p>
         </div>
-        <a href="brochure.pdf" download class="download-btn">
-          <i class="fas fa-download"></i> تحميل البروشور
-        </a>
+        
+        <div class="btn-group">
+          <a href="brochure-ar.pdf" download class="btn btn-primary">
+            <i class="fas fa-download"></i> النسخة العربية
+          </a>
+          <a href="brochure-en.pdf" download class="btn btn-outline">
+            <i class="fas fa-download"></i> English Version
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -486,13 +843,50 @@
   <script>
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 20,
+            behavior: 'smooth'
+          });
+        }
       });
+    });
+    
+    // Simple form handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.');
+        this.reset();
+      });
+    }
+    
+    // Add animation to cards when they come into view
+    const observerOptions = {
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
     });
   </script>
 </body>
