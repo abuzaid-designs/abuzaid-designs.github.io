@@ -1,10 +1,13 @@
+Here's the modified HTML code with the requested changes to update the logo and add Twitter/X logo links:
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abu Zaid Designs - تصميمات إبداعية احترافية</title>
-  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
+  <link rel="icon" href="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo.png" type="image/png">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -566,6 +569,19 @@
     .telegram-icon { background: var(--telegram); }
     .x-icon { background: var(--x); }
 
+    /* Twitter/X Logo Styles */
+    .twitter-logo {
+      width: 40px;
+      height: 40px;
+      margin: 10px auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .twitter-logo:hover {
+      transform: scale(1.1);
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 15px;
@@ -624,11 +640,16 @@
 </head>
 <body>
 
+  <!-- Twitter/X Logo at the top -->
+  <a href="https://x.com/abuzaid_designs" target="_blank" style="margin-bottom: 20px;">
+    <img src="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo-X.png" alt="Twitter/X" class="twitter-logo">
+  </a>
+
   <div class="container">
     <!-- Main Profile Card -->
     <div class="card">
       <div class="card-header">
-        <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img" />
+        <img src="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo.png" alt="Abu Zaid Designs" class="profile-img" />
         <h1 class="title">Abu Zaid Designs</h1>
         <p class="subtitle">إسلام أبو زيد - مصمم جرافيك محترف</p>
       </div>
@@ -884,6 +905,11 @@
     </div>
   </div>
 
+  <!-- Twitter/X Logo at the bottom -->
+  <a href="https://x.com/abuzaid_designs" target="_blank" style="margin-top: 20px;">
+    <img src="https://raw.githubusercontent.com/abuzaid-designs/abuzaid-designs.github.io/main/logo-X.png" alt="Twitter/X" class="twitter-logo">
+  </a>
+
   <div class="copyright">
     © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
   </div>
@@ -899,31 +925,4 @@
         
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 20,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    // Form handling to send to WhatsApp
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    
-    if (contactForm && submitBtn) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-        
-        const whatsappMessage = `مرحباً، أريد استشارة تصميمية%0A%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aنوع الخدمة: ${service}%0Aالرسالة: ${message}`;
-        
-        window.open(`https://wa.me/201031423492?text=${whatsappMessage}`, '_blank');
-      });
-    }
-  </script>
-</body>
-</html>
+            top:
