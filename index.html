@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abu Zaid Designs - روابط التواصل</title>
   
-  <!-- Google Fonts -->
+  <!-- خطوط Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
+    /* الألوان الأساسية */
     :root {
       --primary: #FF7A00;
       --primary-dark: #E56A00;
@@ -25,6 +26,7 @@
       --instagram: #E1306C;
       --facebook: #1877F2;
       --x: #000000;
+      --x-hover: #1DA1F2; /* أزرق تويتر */
     }
     
     * {
@@ -53,7 +55,7 @@
       position: relative;
     }
     
-    /* Header Design with Curved Bottom */
+    /* تصميم الهيدر */
     .card-header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       padding: 40px 30px 50px;
@@ -137,20 +139,45 @@
       transition: all 0.3s ease;
     }
     
-    /* Platform Colors */
+    /* ألوان المنصات */
     .whatsapp .icon-wrapper { background: rgba(37, 211, 102, 0.1); color: var(--whatsapp); }
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: rgba(0, 0, 0, 0.1); color: var(--x); }
+    .x .icon-wrapper { 
+      background: rgba(0, 0, 0, 0.1); 
+      color: var(--x);
+      position: relative;
+      overflow: hidden;
+    }
     
-    /* X Logo Special Effect */
+    /* تأثيرات خاصة بـ X */
     .x-logo {
       font-weight: bold;
+      position: relative;
+      z-index: 2;
     }
     
     .x:hover .icon-wrapper {
-      animation: xPulse 1.5s infinite;
+      background: rgba(29, 161, 242, 0.1);
+      color: var(--x-hover);
+    }
+    
+    .x .icon-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: radial-gradient(circle, rgba(29,161,242,0.2) 0%, rgba(0,0,0,0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 50%;
+    }
+    
+    .x:hover .icon-wrapper::before {
+      opacity: 1;
     }
     
     @keyframes xPulse {
@@ -159,6 +186,11 @@
       100% { transform: scale(1); }
     }
     
+    .x:hover .icon-wrapper {
+      animation: xPulse 1.5s infinite;
+    }
+    
+    /* تأثيرات الأيقونات */
     .arrow-icon {
       color: #999;
       font-size: 16px;
@@ -170,13 +202,17 @@
       transform: translateX(-8px);
     }
     
-    /* Platform Hover Colors */
+    /* ألوان المنصات عند hover */
     .whatsapp:hover { color: var(--whatsapp); }
     .telegram:hover { color: var(--telegram); }
     .instagram:hover { color: var(--instagram); }
     .facebook:hover { color: var(--facebook); }
-    .x:hover { color: var(--x); }
+    .x:hover { 
+      color: var(--x-hover);
+      text-shadow: 0 0 5px rgba(29, 161, 242, 0.3);
+    }
     
+    /* علامة مائية */
     .watermark {
       text-align: center;
       margin-top: 30px;
@@ -184,6 +220,7 @@
       font-size: 0.9rem;
     }
     
+    /* تصميم متجاوب */
     @media (max-width: 600px) {
       .card {
         border-radius: 20px;
@@ -259,7 +296,7 @@
             <div class="icon-wrapper">
               <i class="fab fa-x-twitter x-logo"></i>
             </div>
-            <span>X</span>
+            <span>X (Twitter)</span>
           </div>
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
