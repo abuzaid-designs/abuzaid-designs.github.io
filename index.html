@@ -210,7 +210,7 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--x); }
+    .x .icon-wrapper { background: transparent; }
     .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
     .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
     .portfolio .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
@@ -587,6 +587,14 @@
     .telegram-icon { background: var(--telegram); }
     .x-icon { background: var(--x); }
 
+    /* Custom X icon styles */
+    .custom-icon-x {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 15px;
@@ -690,7 +698,7 @@
           
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><img src="images/logo-X.png" alt="X" class="custom-icon-x"></div>
+              <div class="icon-wrapper"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png" alt="X" class="custom-icon-x"></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
@@ -860,7 +868,7 @@
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <img src="logo-X.png" alt="X" class="custom-icon-x">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png" alt="X" class="custom-icon-x">
           </a>
         </div>
         
@@ -917,71 +925,4 @@
       const message = document.getElementById('message').value;
 
       // التحقق من الحقول المطلوبة
-      if (!name || !phone || !service || !message) {
-        alert('الرجاء ملء جميع الحقول المطلوبة');
-        return;
-      }
-
-      // تنسيق الرسالة
-      const formattedMessage = `
-        *رسالة جديدة من موقع Abu Zaid Designs*
-        
-        *الاسم:* ${name}
-        *رقم الهاتف:* ${phone}
-        *نوع الخدمة:* ${service}
-        
-        *
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <!-- باقي الـ head يبقى كما هو بدون تغيير -->
-  <style>
-    /* أضف هذه القواعد الجديدة في قسم الـ style */
-    .custom-icon-x {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-      filter: brightness(0) invert(1); /* لتظهر بيضاء */
-    }
-
-    .x .icon-wrapper {
-      background: transparent !important; /* إزالة الخلفية الرمادية */
-    }
-
-    .x-icon {
-      background: #000 !important; /* خلفية سوداء للأيقونة في قسم التواصل */
-    }
-
-    /* باقي الـ CSS يبقى كما هو */
-  </style>
-</head>
-<body>
-  <!-- ... الأقسام الأخرى تبقى كما هي ... -->
-
-  <!-- قسم الروابط الرئيسية (التعديل هنا) -->
-  <div class="links-container">
-    <!-- الروابط الأخرى تبقى كما هي -->
-    <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
-      <div class="link-content">
-        <div class="icon-wrapper"><img src="images/logo-X.png" alt="X" class="custom-icon-x"></div>
-        <span>Twitter / X</span>
-      </div>
-      <i class="fas fa-arrow-left arrow-icon"></i>
-    </a>
-  </div>
-
-  <!-- ... الأقسام الأخرى تبقى كما هي ... -->
-
-  <!-- قسم التواصل (التعديل هنا) -->
-  <div class="contact-icons">
-    <!-- أيقونات التواصل الأخرى تبقى كما هي -->
-    <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-      <img src="images/logo-X.png" alt="X" class="custom-icon-x">
-    </a>
-  </div>
-
-  <!-- ... باقي الصفحة يبقى كما هو ... -->
-</body>
-</html>
-<img src="images/logo-X.png" alt="X" class="custom-icon-x">
+      if (!
