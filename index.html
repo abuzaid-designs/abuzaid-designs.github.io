@@ -195,7 +195,7 @@
       gap: 15px;
     }
 
-    .icon-wrapper {
+     .icon-wrapper {
       width: 45px;
       height: 45px;
       border-radius: 12px;
@@ -210,7 +210,7 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: rgba(225, 50, 105, 0.1); color: var(--transparent) ; }
+    .x .icon-wrapper { background: transparent; }
     .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
     .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
     .portfolio .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
@@ -235,18 +235,12 @@
     .telegram:hover { color: var(--telegram); }
     .instagram:hover { color: var(--instagram); }
     .facebook:hover { color: var(--facebook); }
-     .x:hover { color: var(--x-blue); }
+    .x:hover { color: var(--x-blue); }
     .youtube:hover { color: var(--youtube); }
     .behance:hover { color: var(--behance); }
     .threads:hover { color: var(--dark); }
 
-    .about-text, .service-item {
-      margin-bottom: 15px;
-      line-height: 1.7;
-      color: var(--text-color);
-    }
-
-       /* التعديلات على أيقونة X */
+    /* التعديلات على أيقونة X */
     .x .icon-wrapper img {
       width: 22px;
       height: 22px;
@@ -259,6 +253,12 @@
       filter: brightness(0) invert(1);
     }
 
+    /* باقي الستايلات كما هي */
+    .about-text, .service-item {
+      margin-bottom: 15px;
+      line-height: 1.7;
+      color: var(--text-color);
+    }
 
     .service-item {
       display: flex;
@@ -296,6 +296,14 @@
       text-align: center;
       color: var(--text-light);
       font-size: 0.95rem;
+      padding: 12px 25px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+      width: fit-content;
+      margin: 0 auto 20px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     .btn {
@@ -345,6 +353,7 @@
       gap: 15px;
       margin-top: 20px;
     }
+
 
     .testimonial {
       background: white;
