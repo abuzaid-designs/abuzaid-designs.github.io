@@ -3,32 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abu Zaid Designs - Social Links</title>
+  <title>Abu Zaid Designs - Social Hub</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Favicon -->
-  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   
   <style>
     :root {
-      --primary: #FF7A00; /* Main orange color */
+      --primary: #FF7A00;
       --primary-dark: #E56A00;
       --secondary: #FF9E40;
       --dark: #1F2937;
       --light: #F9FAFB;
-      --gray: #6B7280;
       --whatsapp: #25D366;
       --telegram: #0088CC;
       --instagram: #E1306C;
       --facebook: #1877F2;
-      --x: #000000; /* X platform color */
+      --x: #000000;
+      --bg-gradient: linear-gradient(135deg, #FF7A00 0%, #FF9E40 100%);
     }
     
     * {
@@ -39,144 +39,176 @@
     }
     
     body {
-      background-color: #F8F9FA;
-      background-image: 
-        radial-gradient(at 80% 0%, hsla(27, 100%, 50%, 0.05) 0px, transparent 50%),
-        radial-gradient(at 0% 50%, hsla(27, 100%, 50%, 0.05) 0px, transparent 50%);
+      background-color: #f5f5f5;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      color: var(--dark);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,122,0,0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255,158,64,0.05) 0%, transparent 20%);
     }
     
-    .card {
+    /* Design Variant 1: Glass Morphism */
+    .glass-card {
       width: 100%;
-      max-width: 480px;
-      background: white;
-      border-radius: 20px;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       position: relative;
-      transition: transform 0.4s ease;
+      z-index: 1;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
-    .card:hover {
-      transform: translateY(-8px) rotate(1deg);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    .glass-card:hover {
+      transform: translateY(-10px) rotate(2deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
     
-    .card-header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      padding: 35px 25px;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    /* Orange header animations */
-    .card-header::before {
-      content: '';
+    /* Floating Orbs Background */
+    .orbs {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        45deg,
-        rgba(255,255,255,0.1) 0%,
-        rgba(255,255,255,0) 50%,
-        rgba(255,255,255,0.1) 100%
-      );
-      background-size: 200% 200%;
-      animation: shine 3s infinite linear;
+      overflow: hidden;
+      z-index: -1;
     }
     
-    @keyframes shine {
-      0% { background-position: 100% 50%; }
-      100% { background-position: -100% 50%; }
-    }
-    
-    .card-header::after {
-      content: '';
+    .orb {
       position: absolute;
-      bottom: -50px;
-      right: -50px;
-      width: 100px;
-      height: 100px;
-      background: rgba(255,255,255,0.1);
       border-radius: 50%;
-      filter: blur(20px);
+      filter: blur(40px);
+      opacity: 0.15;
+    }
+    
+    .orb-1 {
+      width: 200px;
+      height: 200px;
+      background: var(--primary);
+      top: -50px;
+      right: -50px;
+      animation: floatOrb 8s infinite alternate;
+    }
+    
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--secondary);
+      bottom: -100px;
+      left: -100px;
+      animation: floatOrb 12s infinite alternate-reverse;
+    }
+    
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(50px, 50px); }
+      100% { transform: translate(-30px, -30px); }
+    }
+    
+    /* Header with Animated Gradient */
+    .card-header {
+      background: var(--bg-gradient);
+      padding: 40px 30px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background-size: 200% 200%;
+      animation: gradientBG 8s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 4px solid rgba(255, 255, 255, 0.3);
+      border: 3px solid rgba(255, 255, 255, 0.5);
       object-fit: cover;
-      margin-bottom: 15px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s ease;
       position: relative;
       z-index: 1;
     }
     
     .profile-img:hover {
-      transform: scale(1.1) rotate(5deg);
-      border-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      transform: scale(1.1) rotate(10deg);
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Glow Effect on Image */
+    .profile-img::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    
+    .profile-img:hover::after {
+      opacity: 0.6;
     }
     
     .title {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2rem;
+      font-weight: 900;
       margin-bottom: 5px;
-      position: relative;
-      z-index: 1;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     
     .subtitle {
-      font-size: 1rem;
+      font-size: 1.1rem;
       opacity: 0.9;
       font-weight: 300;
-      position: relative;
-      z-index: 1;
     }
     
     .card-body {
-      padding: 30px 25px;
+      padding: 35px 30px;
     }
     
+    /* Modern Link Design */
     .links-container {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 15px;
     }
     
     .social-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 20px;
-      background: white;
-      border-radius: 12px;
+      padding: 18px 25px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
       text-decoration: none;
       color: var(--dark);
-      font-weight: 500;
-      border: 1px solid #EDEDED;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-    }
-    
-    .social-link:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
     
     .social-link::before {
@@ -184,168 +216,154 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 4px;
+      width: 100%;
       height: 100%;
-      background: var(--primary);
-      transition: all 0.3s ease;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     
     .social-link:hover::before {
-      width: 8px;
-      background: var(--secondary);
+      transform: translateX(0);
     }
     
     .link-content {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
+      z-index: 1;
     }
     
     .icon-wrapper {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 19px;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 22px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     
     .social-link:hover .icon-wrapper {
-      transform: rotate(10deg) scale(1.1);
+      transform: rotate(15deg) scale(1.1);
     }
     
-    .whatsapp .icon-wrapper { background: rgba(37, 211, 102, 0.1); color: var(--whatsapp); }
-    .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
-    .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
-    .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { 
-      background: rgba(0, 0, 0, 0.1); 
-      color: var(--x);
-      position: relative;
-    }
+    /* Platform Specific Styles */
+    .whatsapp .icon-wrapper { color: var(--whatsapp); }
+    .telegram .icon-wrapper { color: var(--telegram); }
+    .instagram .icon-wrapper { color: var(--instagram); }
+    .facebook .icon-wrapper { color: var(--facebook); }
+    .x .icon-wrapper { color: var(--x); }
     
-    /* Special X logo styling */
+    /* X Logo Special Effect */
     .x-logo {
-      font-weight: bold;
       position: relative;
-      display: inline-block;
+      font-weight: 900;
     }
     
-    .x-logo::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--x);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
+    .x .icon-wrapper {
+      background: rgba(0,0,0,0.9);
+      color: white;
     }
     
-    .x:hover .x-logo::after {
-      transform: scaleX(1);
+    .x:hover .icon-wrapper {
+      animation: xPulse 1.5s infinite;
+    }
+    
+    @keyframes xPulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(0,0,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
     }
     
     .arrow-icon {
-      color: var(--gray);
-      font-size: 14px;
+      color: var(--primary);
+      font-size: 16px;
       transition: all 0.3s ease;
     }
     
     .social-link:hover .arrow-icon {
-      transform: translateX(-5px) rotate(-15deg);
-      color: var(--primary);
+      transform: translateX(-8px) rotate(-20deg);
     }
     
+    /* Platform Hover Colors */
+    .whatsapp:hover { color: var(--whatsapp); }
+    .telegram:hover { color: var(--telegram); }
+    .instagram:hover { color: var(--instagram); }
+    .facebook:hover { color: var(--facebook); }
+    .x:hover { color: var(--x); }
+    
+    /* Watermark with Neon Effect */
     .watermark {
       text-align: center;
-      margin-top: 25px;
-      font-size: 0.85rem;
-      color: var(--gray);
-      opacity: 0.7;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 500;
+      text-shadow: 0 0 5px rgba(255,122,0,0.3);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .watermark::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: var(--primary);
+      opacity: 0.5;
       transition: all 0.3s ease;
     }
     
     .watermark:hover {
+      text-shadow: 0 0 10px rgba(255,122,0,0.5);
+    }
+    
+    .watermark:hover::before {
+      width: 80px;
       opacity: 1;
-      transform: scale(1.02);
     }
     
-    /* Platform specific hover effects */
-    .whatsapp:hover { color: var(--whatsapp); border-color: rgba(37, 211, 102, 0.3); }
-    .telegram:hover { color: var(--telegram); border-color: rgba(0, 136, 204, 0.3); }
-    .instagram:hover { color: var(--instagram); border-color: rgba(225, 48, 108, 0.3); }
-    .facebook:hover { color: var(--facebook); border-color: rgba(24, 119, 242, 0.3); }
-    .x:hover { 
-      color: var(--x); 
-      border-color: rgba(0, 0, 0, 0.3);
+    /* Floating Particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
     }
     
-    /* Animation for social links */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .particle {
+      position: absolute;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      animation: floatParticle linear infinite;
     }
     
-    .social-link {
-      animation: fadeInUp 0.5s ease forwards;
-      opacity: 0;
+    @keyframes floatParticle {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
     }
     
-    .social-link:nth-child(1) { animation-delay: 0.1s; }
-    .social-link:nth-child(2) { animation-delay: 0.2s; }
-    .social-link:nth-child(3) { animation-delay: 0.3s; }
-    .social-link:nth-child(4) { animation-delay: 0.4s; }
-    .social-link:nth-child(5) { animation-delay: 0.5s; }
-    
-    /* Pulse animation for profile image */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    
-    .profile-img {
-      animation: pulse 3s infinite;
-    }
-    
-    /* Floating animation for card */
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
-    
-    .card {
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    /* Glowing effect for X on hover */
-    .x:hover .icon-wrapper {
-      animation: xGlow 1.5s infinite alternate;
-    }
-    
-    @keyframes xGlow {
-      from {
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
-      }
-      to {
-        box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .card {
-        border-radius: 16px;
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .glass-card {
+        border-radius: 20px;
       }
       
       .card-header {
@@ -353,31 +371,48 @@
       }
       
       .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
       }
       
       .title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
       
       .card-body {
         padding: 25px 20px;
       }
+      
+      .social-link {
+        padding: 15px 20px;
+      }
+      
+      .icon-wrapper {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
+  <div class="glass-card animate__animated animate__fadeIn">
+    <div class="orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
+    
+    <div class="particles" id="particles"></div>
+    
     <div class="card-header">
-      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img">
-      <h1 class="title">Abu Zaid Designs</h1>
-      <p class="subtitle">Connect with us on social media</p>
+      <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs" class="profile-img animate__animated animate__zoomIn">
+      <h1 class="title animate__animated animate__fadeInDown">Abu Zaid Designs</h1>
+      <p class="subtitle animate__animated animate__fadeInUp">Connect With Us</p>
     </div>
     
     <div class="card-body">
       <div class="links-container">
-        <a href="https://wa.me/201031423492" class="social-link whatsapp" target="_blank">
+        <a href="https://wa.me/201031423492" class="social-link whatsapp animate__animated animate__fadeInRight" style="animation-delay: 0.1s">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-whatsapp"></i>
@@ -387,7 +422,7 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
-        <a href="https://t.me/abuzaid_designs" class="social-link telegram" target="_blank">
+        <a href="https://t.me/abuzaid_designs" class="social-link telegram animate__animated animate__fadeInRight" style="animation-delay: 0.2s">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-telegram-plane"></i>
@@ -397,7 +432,7 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
-        <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram" target="_blank">
+        <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram animate__animated animate__fadeInRight" style="animation-delay: 0.3s">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-instagram"></i>
@@ -407,7 +442,7 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
-        <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook animate__animated animate__fadeInRight" style="animation-delay: 0.4s">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-facebook-f"></i>
@@ -417,7 +452,7 @@
           <i class="fas fa-arrow-left arrow-icon"></i>
         </a>
         
-        <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
+        <a href="https://x.com/abuzaid_designs" class="social-link x animate__animated animate__fadeInRight" style="animation-delay: 0.5s">
           <div class="link-content">
             <div class="icon-wrapper">
               <i class="fab fa-x-twitter x-logo"></i>
@@ -428,10 +463,47 @@
         </a>
       </div>
       
-      <div class="watermark">
+      <div class="watermark animate__animated animate__fadeIn" style="animation-delay: 0.8s">
         © 2025 Abu Zaid Designs
       </div>
     </div>
   </div>
+
+  <script>
+    // Create floating particles
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 20;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random size between 2px and 6px
+      const size = Math.random() * 4 + 2;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Random position
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.bottom = `-${size}px`;
+      
+      // Random animation duration between 10s and 20s
+      const duration = Math.random() * 10 + 10;
+      particle.style.animationDuration = `${duration}s`;
+      
+      // Random delay
+      particle.style.animationDelay = `${Math.random() * 10}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+    
+    // Add hover sound effect (optional)
+    const links = document.querySelectorAll('.social-link');
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        // You can add a sound effect here if desired
+      });
+    });
+  </script>
 </body>
 </html>
