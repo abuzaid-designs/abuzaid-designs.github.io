@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abu Zaid Designs - تصميمات إبداعية احترافية</title>
-  <link rel="icon" href="https://abuzaid-designs.github.io/logo.png" type="image/png">
+  <link rel="icon" href="logo.png" type="image/png">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -210,11 +210,9 @@
     .telegram .icon-wrapper { background: rgba(0, 136, 204, 0.1); color: var(--telegram); }
     .instagram .icon-wrapper { background: rgba(225, 48, 108, 0.1); color: var(--instagram); }
     .facebook .icon-wrapper { background: rgba(24, 119, 242, 0.1); color: var(--facebook); }
-    .x .icon-wrapper { background: transparent; }
+    .x .icon-wrapper { background: rgba(0, 0, 0, 0.1); } /* تعديل هنا لجعلها مثل الباقي */
     .youtube .icon-wrapper { background: rgba(255, 0, 0, 0.1); color: var(--youtube); }
     .behance .icon-wrapper { background: rgba(23, 105, 255, 0.1); color: var(--behance); }
-    .portfolio .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
-    .threads .icon-wrapper { background: rgba(0, 0, 0, 0.08); color: var(--dark); }
 
     .social-link:hover .icon-wrapper {
       transform: scale(1.1);
@@ -238,423 +236,9 @@
     .x:hover { color: var(--x-blue); }
     .youtube:hover { color: var(--youtube); }
     .behance:hover { color: var(--behance); }
-    .threads:hover { color: var(--dark); }
 
-    /* التعديلات على أيقونة X */
-    .x .icon-wrapper img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-    }
+    /* بقية الأنماط... */
 
-    .x-icon img {
-      width: 22px;
-      height: 22px;
-      filter: brightness(0) invert(1);
-    }
-
-    /* باقي الستايلات كما هي */
-    .about-text, .service-item {
-      margin-bottom: 15px;
-      line-height: 1.7;
-      color: var(--text-color);
-    }
-
-    .service-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px dashed rgba(0,0,0,0.1);
-    }
-
-    .service-item:last-child {
-      border-bottom: none;
-    }
-
-    .service-icon {
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-top: 3px;
-    }
-
-    .service-text {
-      flex: 1;
-    }
-
-    .footer-message {
-      text-align: center;
-      font-weight: 500;
-      color: var(--text-light);
-      font-size: 1.05rem;
-      margin-top: 15px;
-      padding: 15px 0;
-      line-height: 1.7;
-    }
-
-    .copyright {
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.95rem;
-      padding: 12px 25px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 50px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-      width: fit-content;
-      margin: 0 auto 20px;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary-light);
-      transform: translateY(-3px);
-    }
-
-    .btn-block {
-      display: flex;
-      width: 100%;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .testimonial {
-      background: white;
-      padding: 20px;
-      border-radius: var(--border-radius);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
-      border: 1px solid rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .testimonial-text {
-      line-height: 1.7;
-      color: var(--text-color);
-      padding: 10px;
-      background: var(--primary-light);
-      border-radius: 10px;
-      position: relative;
-    }
-
-    .testimonial-text::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid var(--primary-light);
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .author-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--primary-light);
-    }
-
-    .author-info {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .author-name {
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    .author-title {
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-
-    .rating {
-      color: var(--primary);
-      margin-top: 3px;
-      font-size: 0.9rem;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .portfolio-item {
-      aspect-ratio: 1;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover {
-      transform: scale(1.03);
-    }
-
-    .portfolio-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .portfolio-item:hover .portfolio-img {
-      transform: scale(1.1);
-    }
-
-    .portfolio-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      padding: 15px;
-      color: white;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover .portfolio-overlay {
-      transform: translateY(0);
-    }
-
-    .portfolio-title {
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .portfolio-category {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-label {
-      font-weight: 500;
-      color: var(--dark);
-    }
-
-    .form-input, .form-textarea, .form-select {
-      padding: 12px 15px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      background-color: white;
-    }
-
-    .form-input:focus, .form-textarea:focus, .form-select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.2);
-    }
-
-    .form-textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      margin-left: 10px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .service-card-wide {
-      grid-column: span 2;
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .service-card-icon {
-      color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .service-card-title {
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .service-card-desc {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 25px 0;
-    }
-
-    .contact-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: white;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .contact-icon:hover {
-      transform: translateY(-5px);
-    }
-
-    .whatsapp-icon { background: var(--whatsapp); }
-    .instagram-icon { background: var(--instagram); }
-    .facebook-icon { background: var(--facebook); }
-    .telegram-icon { background: var(--telegram); }
-    .x-icon { background: var(--x); }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 15px;
-        background-attachment: scroll;
-      }
-
-      .card { 
-        border-radius: 14px;
-        margin-bottom: 20px;
-      }
-
-      .card-header { 
-        padding: 30px 20px 40px; 
-        clip-path: ellipse(140% 100% at 50% 0%);
-      }
-
-      .profile-img { 
-        width: 110px; 
-        height: 110px; 
-      }
-
-      .title { 
-        font-size: 1.8rem; 
-      }
-
-      .subtitle {
-        font-size: 1.05rem;
-      }
-
-      .card-body {
-        padding: 25px 20px;
-      }
-
-      .section-title {
-        font-size: 1.3rem;
-      }
-
-      .copyright {
-        font-size: 0.85rem;
-        padding: 10px 20px;
-      }
-      
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .service-card-wide {
-        grid-column: span 1;
-      }
-    }
   </style>
 </head>
 <body>
@@ -663,7 +247,7 @@
     <!-- Main Profile Card -->
     <div class="card">
       <div class="card-header">
-        <img src="https://abuzaid-designs.github.io/logo.png" alt="Abu Zaid Designs Logo" class="profile-img">
+        <img src="logo.png" alt="Abu Zaid Designs Logo" class="profile-img">
         <h1 class="title">Abu Zaid Designs</h1>
         <p class="subtitle">إسلام أبو زيد - مصمم جرافيك محترف</p>
       </div>
@@ -673,7 +257,7 @@
           <a href="https://wa.me/201031423492" class="social-link whatsapp" target="_blank">
             <div class="link-content">
               <div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
-              <span>WhatsApp <span class="badge">سريع</span></span>
+              <span>WhatsApp</span> <!-- تم إزالة كلمة "سريع" هنا -->
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
@@ -686,199 +270,23 @@
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
           
-          <a href="https://www.instagram.com/abuzaid_designs/" class="social-link instagram" target="_blank">
-            <div class="link-content">
-              <div class="icon-wrapper"><i class="fab fa-instagram"></i></div>
-              <span>Instagram</span>
-            </div>
-            <i class="fas fa-arrow-left arrow-icon"></i>
-          </a>
-          
-          <a href="https://www.facebook.com/profile.php?id=61576688616675" class="social-link facebook" target="_blank">
-            <div class="link-content">
-              <div class="icon-wrapper"><i class="fab fa-facebook-f"></i></div>
-              <span>Facebook</span>
-            </div>
-            <i class="fas fa-arrow-left arrow-icon"></i>
-          </a>
-          
           <a href="https://x.com/abuzaid_designs" class="social-link x" target="_blank">
             <div class="link-content">
-              <div class="icon-wrapper"><img src="logo-X.png" alt="X"></div>
+              <div class="icon-wrapper"><img src="logo-X.png" alt="X" style="width:22px;height:22px;"></div>
               <span>Twitter / X</span>
             </div>
             <i class="fas fa-arrow-left arrow-icon"></i>
           </a>
         </div>
-
-        <div class="footer-message">
-          تواصل معنا للحصول على تصميمات مبتكرة تعكس هويتك الفريدة وتلفت الأنظار بأناقة.
-        </div>
       </div>
     </div>
 
-    <!-- About Card -->
-    <div class="card">
-      <div class="card-body">
-        <h2 class="section-title"><i class="fas fa-user-tie"></i> من نحن</h2>
-        <div class="about-text">
-          <p>أنا <strong>إسلام أبو زيد</strong>، مصمم جرافيك محترف بخبرة تزيد عن 3 سنوات في مجال التصميم الجرافيكي والهويات البصرية. أسست Abu Zaid Designs لتقديم حلول تصميمية متميزة تناسب احتياجات العملاء.</p>
-        </div>
-        <div class="about-text">
-          <p>نحن نؤمن بأن التصميم الجيد ليس مجرد شكل جميل، بل هو وسيلة فعّالة لإيصال الرسائل وتعزيز الهوية البصرية للعلامات التجارية والأفراد.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Services Card -->
-    <div class="card" id="services">
-      <div class="card-body">
-        <h2 class="section-title"><i class="fas fa-paint-brush"></i> خدماتنا</h2>
-        
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-card-icon"><i class="fas fa-palette"></i></div>
-            <div class="service-card-title">تصميم الشعارات والهويات البصرية</div>
-            <div class="service-card-desc">تصميم شعارات مميزة تعبر عن هوية علامتك التجارية مع دليل استخدام كامل</div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-card-icon"><i class="fas fa-ad"></i></div>
-            <div class="service-card-title">تصميم الإعلانات والمطبوعات</div>
-            <div class="service-card-desc">إعلانات مطبوعة، لافتات، بروشورات، فلايرات، ومنشورات ترويجية احترافية</div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-card-icon"><i class="fas fa-envelope-open-text"></i></div>
-            <div class="service-card-title">تصميم كروت الأفراح والدعوات</div>
-            <div class="service-card-desc">تصميمات فريدة لدعوات الزفاف، المواليد، والمناسبات الخاصة بك</div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-card-icon"><i class="fas fa-book-open"></i></div>
-            <div class="service-card-title">تصميم أغلفة الكتب والملازم</div>
-            <div class="service-card-desc">أغلفة جذابة للكتب الدراسية، الروايات، الأبحاث والملازم التعليمية</div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-card-icon"><i class="fas fa-file-word"></i></div>
-            <div class="service-card-title">تحويل النصوص إلى ملفات رقمية</div>
-            <div class="service-card-desc">تحويل المستندات الورقية أو الصور إلى ملفات Word وExcel قابلة للتعديل</div>
-          </div>
-          
-          <div class="service-card">
-            <div class="service-card-icon"><i class="fas fa-hashtag"></i></div>
-            <div class="service-card-title">تصميمات السوشيال ميديا</div>
-            <div class="service-card-desc">تصميم منشورات، ستوريات، بانرات، وإعلانات لوسائل التواصل الاجتماعي</div>
-          </div>
-          
-          <div class="service-card-wide">
-            <div class="service-card-icon"><i class="fas fa-lightbulb"></i></div>
-            <div class="service-card-title">تصميم مخصص حسب طلبك</div>
-            <div class="service-card-desc">أخبرنا عن احتياجاتك التصميمية وسنقوم بتنفيذها لك بأعلى جودة واحترافية</div>
-          </div>
-        </div>
-        
-        <a href="#contact" class="btn btn-primary btn-block" style="margin-top: 20px;">اطلب خدمتك الآن</a>
-      </div>
-    </div>
-
-    <!-- Portfolio Card -->
-    <div class="card" id="portfolio">
-      <div class="card-body">
-        <h2 class="section-title"><i class="fas fa-images"></i> معرض الأعمال</h2>
-        <div class="about-text">
-          <p>تصفح أعمالنا السابقة على منصة Behance:</p>
-        </div>
-        
-        <div class="links-container" style="margin-top: 20px;">
-          <a href="https://behance.net/abuzaid17" class="social-link behance" target="_blank">
-            <div class="link-content">
-              <div class="icon-wrapper"><i class="fab fa-behance"></i></div>
-              <span>تصفح أعمالنا على Behance</span>
-            </div>
-            <i class="fas fa-arrow-left arrow-icon"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Testimonials Card -->
-    <div class="card">
-      <div class="card-body">
-        <h2 class="section-title"><i class="fas fa-star"></i> آراء العملاء</h2>
-        
-        <div class="testimonial">
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Mohamed" class="author-avatar">
-            <div class="author-info">
-              <div class="author-name">أحمد محمد</div>
-              <div class="author-title">صاحب مطعم</div>
-              <div class="rating">★★★★★</div>
-            </div>
-          </div>
-          <div class="testimonial-text">
-            "تعاملت مع إسلام أبو زيد لتصميم شعار لمطعمي الجديد، وكانت الخدمة ممتازة من حيث التواصل السريع والاهتمام بكل التفاصيل. الشعار النهائي فاق توقعاتي تماماً!"
-          </div>
-        </div>
-        
-        <div class="testimonial">
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mona Ali" class="author-avatar">
-            <div class="author-info">
-              <div class="author-name">منى علي</div>
-              <div class="author-title">عميلة</div>
-              <div class="rating">★★★★★</div>
-            </div>
-          </div>
-          <div class="testimonial-text">
-            "إسلام أبو زيد صمم دعوات زفافي بطريقة إبداعية رائعة. كان متعاوناً جداً ويستمع لجميع ملاحظاتي حتى وصلنا للتصميم المثالي الذي يعبر عن شخصيتنا."
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Youssef Ahmed" class="author-avatar">
-            <div class="author-info">
-              <div class="author-name">يوسف أحمد</div>
-              <div class="author-title">رائد أعمال</div>
-              <div class="rating">★★★★★</div>
-            </div>
-          </div>
-          <div class="testimonial-text">
-            "كلفت إسلام أبو زيد بتصميم الهوية البصرية لشركتي الناشئة، وكان اختياراً موفقاً. التصاميم احترافية وعصرية، مع التزام دقيق بالمواعيد النهائية لتسليم العمل."
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Card -->
+    <!-- نموذج الاتصال -->
     <div class="card" id="contact">
       <div class="card-body">
         <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معنا</h2>
-        <div class="about-text">
-          <p>يمكنك التواصل معنا عبر أي من المنصات التالية:</p>
-        </div>
         
-        <div class="contact-icons">
-          <a href="https://wa.me/201031423492" class="contact-icon whatsapp-icon" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://t.me/abuzaid_designs" class="contact-icon telegram-icon" target="_blank">
-            <i class="fab fa-telegram-plane"></i>
-          </a>
-          <a href="https://www.instagram.com/abuzaid_designs/" class="contact-icon instagram-icon" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61576688616675" class="contact-icon facebook-icon" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
-            <img src="logo-X.png" alt="X">
-          </a>
-        </div>
-        
-        <div class="contact-form" id="contactForm">
+        <div class="contact-form">
           <div class="form-group">
             <label for="name" class="form-label">الاسم بالكامل</label>
             <input type="text" id="name" class="form-input" placeholder="أدخل اسمك" required>
@@ -895,32 +303,19 @@
               <option value="">اختر من القائمة</option>
               <option value="شعار وهوية بصرية">شعار وهوية بصرية</option>
               <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
-              <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
-              <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
-              <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
-              <option value="تصميمات سوشيال ميديا">تصميمات سوشيال ميديا</option>
-              <option value="أخرى">أخرى (حدد في الرسالة)</option>
+              <option value="أخرى">أخرى</option>
             </select>
           </div>
           
           <div class="form-group">
             <label for="message" class="form-label">الرسالة</label>
-            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية" required></textarea>
+            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية"></textarea>
           </div>
           
-          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال الرسالة</button>
-        </div>
-        
-        <div class="footer-message" style="margin-top: 25px;">
-          للتواصل السريع عبر واتساب: 
-          <a href="https://wa.me/201031423492" style="color: var(--primary); text-decoration: none; font-weight: 600;">اضغط هنا</a>
+          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال</button> <!-- تم تغيير النص هنا -->
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="copyright">
-    © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
   </div>
 
   <script>
@@ -930,4 +325,20 @@
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value;
 
-      if (!name || !phone || !service ||
+      if (!name || !phone || !service) {
+        alert('الرجاء إدخال البيانات المطلوبة');
+        return;
+      }
+
+      const whatsappUrl = `https://wa.me/201031423492?text=
+        اسم العميل: ${encodeURIComponent(name)}%0A
+        رقم الهاتف: ${encodeURIComponent(phone)}%0A
+        الخدمة المطلوبة: ${encodeURIComponent(service)}%0A
+        الرسالة: ${encodeURIComponent(message || 'لا توجد رسالة إضافية')}
+      `.replace(/\s+/g, '');
+
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
