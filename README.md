@@ -1,1 +1,1 @@
-![Uploading logo.png.png…]()
+![Uploading logo.png…]()
