@@ -933,4 +933,10 @@
         return;
       }
 
-      const whatsappMessage = `Abu Zaid Designs\n\nالاسم: ${name}\n\nالبريد الإلكتروني: ${email || 'لم يتم تقديمه'}\n\nرقم الهاتف: ${phone}\n\nالخدمة المطلوبة: ${service}\n\nالرسالة:
+      const whatsappText = `Abu Zaid Designs%0A%0Aالاسم: ${encodeURIComponent(name)}%0A%0Aالبريد الإلكتروني: ${encodeURIComponent(email || 'لم يتم تقديمه')}%0A%0Aرقم الهاتف: ${encodeURIComponent(phone)}%0A%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0A%0Aالرسالة: ${encodeURIComponent(message || 'لا توجد رسالة إضافية')}`;
+      
+      const whatsappUrl = `https://wa.me/201031423492?text=${whatsappText}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
+</script>
