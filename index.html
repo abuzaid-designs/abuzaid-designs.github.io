@@ -892,19 +892,38 @@
             <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
           </div>
           
-          <div class="form-group">
-            <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
-            <select id="service" class="form-select" required>
-              <option value="">اختر من القائمة</option>
-              <option value="شعار وهوية بصرية">شعار وهوية بصرية</option>
-              <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
-              <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
-              <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
-              <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
-              <option value="تصميمات سوشيال ميديا">تصميمات سوشيال ميديا</option>
-              <option value="أخرى">أخرى (حدد في الرسالة)</option>
-            </select>
-          </div>
+        <div class="form-group">
+  <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
+  <select id="service" class="form-select" required>
+    <option value="">اختر من القائمة</option>
+    <optgroup label="تصميم الهوية البصرية">
+      <option value="تصميم شعار احترافي">تصميم شعار احترافي</option>
+      <option value="هوية بصرية كاملة">هوية بصرية كاملة (شعار + دليل استخدام)</option>
+    </optgroup>
+    <optgroup label="تصميم المطبوعات">
+      <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
+      <option value="بروشورات وكتيبات">بروشورات وكتيبات</option>
+      <option value="لافتات وبنرات">لافتات وبنرات</option>
+    </optgroup>
+    <optgroup label="تصميمات الأفراح والمناسبات">
+      <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
+      <option value="تصميمات مناسبات خاصة">تصميمات مناسبات خاصة</option>
+    </optgroup>
+    <optgroup label="تصميمات تعليمية">
+      <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
+      <option value="تصميمات عروض تقديمية">تصميمات عروض تقديمية</option>
+    </optgroup>
+    <optgroup label="خدمات التحويل الرقمي">
+      <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
+      <option value="إزالة خلفيات الصور">إزالة خلفيات الصور</option>
+    </optgroup>
+    <optgroup label="تصميمات السوشيال ميديا">
+      <option value="منشورات وسائل التواصل">منشورات وسائل التواصل</option>
+      <option value="ستوريات وانفوجرافيك">ستوريات وانفوجرافيك</option>
+    </optgroup>
+    <option value="تصميم مخصص">تصميم مخصص (حدد التفاصيل في الرسالة)</option>
+  </select>
+</div>
           
           <div class="form-group">
             <label for="message" class="form-label">الرسالة</label>
