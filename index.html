@@ -891,131 +891,174 @@
             <label for="phone" class="form-label">رقم الهاتف</label>
             <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
           </div>
-          
-        <div class="form-group">
-  <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
-  <select id="service" class="form-select" required>
-    <option value="">اختر من القائمة</option>
-    <optgroup label="تصميم الهوية البصرية">
-      <option value="تصميم شعار احترافي">تصميم شعار احترافي</option>
-      <option value="هوية بصرية كاملة">هوية بصرية كاملة (شعار + دليل استخدام)</option>
-    </optgroup>
-    <optgroup label="تصميم المطبوعات">
-      <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
-      <option value="بروشورات وكتيبات">بروشورات وكتيبات</option>
-      <option value="لافتات وبنرات">لافتات وبنرات</option>
-    </optgroup>
-    <optgroup label="تصميمات الأفراح والمناسبات">
-      <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
-      <option value="تصميمات مناسبات خاصة">تصميمات مناسبات خاصة</option>
-    </optgroup>
-    <optgroup label="تصميمات تعليمية">
-      <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
-      <option value="تصميمات عروض تقديمية">تصميمات عروض تقديمية</option>
-    </optgroup>
-    <optgroup label="خدمات التحويل الرقمي">
-      <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
-      <option value="إزالة خلفيات الصور">إزالة خلفيات الصور</option>
-    </optgroup>
-    <optgroup label="تصميمات السوشيال ميديا">
-      <option value="منشورات وسائل التواصل">منشورات وسائل التواصل</option>
-      <option value="ستوريات وانفوجرافيك">ستوريات وانفوجرافيك</option>
-    </optgroup>
-    <option value="تصميم مخصص">تصميم مخصص (حدد التفاصيل في الرسالة)</option>
-  </select>
-</div>
-    <!-- أولا: تعديل قسم الخدمات بإضافة روابط تنقل لنموذج الاتصال -->
+
+          <!-- قسم الخدمات -->
 <div class="card" id="services">
   <div class="card-body">
     <h2 class="section-title"><i class="fas fa-paint-brush"></i> خدماتنا</h2>
     
     <div class="services-grid">
-      <!-- خدمة تصميم الهوية البصرية -->
+      <!-- مجموعة تصميم الهوية البصرية -->
       <div class="service-card" onclick="selectService('تصميم شعار احترافي')">
         <div class="service-card-icon"><i class="fas fa-palette"></i></div>
-        <div class="service-card-title">تصميم الهوية البصرية</div>
-        <div class="service-card-desc">تصميم شامل للهوية البصرية يشمل: الشعار، الألوان، الخطوط، كارت شخصي</div>
+        <div class="service-card-title">تصميم شعار</div>
+        <div class="service-card-desc">تصميم شعار فريد يعبر عن هوية علامتك التجارية</div>
+      </div>
+      
+      <div class="service-card" onclick="selectService('هوية بصرية كاملة')">
+        <div class="service-card-icon"><i class="fas fa-vector-square"></i></div>
+        <div class="service-card-title">هوية بصرية</div>
+        <div class="service-card-desc">حزمة متكاملة للهوية البصرية (شعار + دليل استخدام)</div>
+      </div>
+      
+      <!-- مجموعة المطبوعات -->
+      <div class="service-card" onclick="selectService('إعلانات ومطبوعات')">
+        <div class="service-card-icon"><i class="fas fa-ad"></i></div>
+        <div class="service-card-title">إعلانات</div>
+        <div class="service-card-desc">تصميم إعلانات جذابة لمختلف المنصات</div>
       </div>
       
       <!-- باقي الخدمات بنفس النمط -->
-      <div class="service-card" onclick="selectService('إعلانات ومطبوعات')">
-        <div class="service-card-icon"><i class="fas fa-ad"></i></div>
-        <div class="service-card-title">تصميم الإعلانات</div>
-        <div class="service-card-desc">تصميم لافتات، بروشورات، فلايرات، ومطبوعات دعائية</div>
-      </div>
-      
-      <!-- ... باقي الخدمات بنفس الأسلوب ... -->
     </div>
   </div>
 </div>
 
-<!-- ثانيا: إضافة سكريبت لإتمام العملية -->
-<script>
-  function selectService(serviceName) {
-    // التمرير لنموذج الاتصال
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+<!-- نموذج الاتصال -->
+<div class="card" id="contact">
+  <div class="card-body">
+    <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معنا</h2>
     
-    // تحديد نوع الخدمة المطلوبة
-    const serviceSelect = document.getElementById('service');
-    for (let i = 0; i < serviceSelect.options.length; i++) {
-      if (serviceSelect.options[i].text === serviceName) {
-        serviceSelect.selectedIndex = i;
-        break;
-      }
-    }
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
+        <select id="service" class="form-select" required>
+          <option value="">اختر من القائمة</option>
+          <optgroup label="تصميم الهوية البصرية">
+            <option value="تصميم شعار احترافي">تصميم شعار احترافي</option>
+            <option value="هوية بصرية كاملة">هوية بصرية كاملة (شعار + دليل استخدام)</option>
+          </optgroup>
+          <!-- باقي الخيارات كما هي -->
+        </select>
+      </div>
+      
+      <!-- باقي حقول النموذج -->
+      <div class="form-group">
+        <label for="message" class="form-label">تفاصيل الطلب</label>
+        <textarea id="message" class="form-textarea" rows="5" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">
+        <i class="fab fa-whatsapp"></i> إرسال عبر واتساب
+      </button>
+    </form>
+  </div>
+</div>
+
+      function selectService(serviceName) {
+  // 1. التمرير السلس إلى قسم الاتصال
+  const contactSection = document.getElementById('contact');
+  contactSection.classList.add('highlight');
+  setTimeout(() => contactSection.classList.remove('highlight'), 1500);
+  
+  contactSection.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+
+  // 2. تعبئة حقل الخدمة المحددة
+  const serviceSelect = document.getElementById('service');
+  const options = Array.from(serviceSelect.options);
+  const selectedOption = options.find(opt => opt.text.includes(serviceName));
+  
+  if (selectedOption) {
+    serviceSelect.value = selectedOption.value;
+  } else {
+    // إذا لم يجد الخدمة، يختار "تصميم مخصص" ويكتب الخدمة في الرسالة
+    serviceSelect.value = "تصميم مخصص";
+    document.getElementById('message').value = `أرغب في خدمة: ${serviceName}\n\nالمواصفات المطلوبة:\n- \n- `;
+    return;
+  }
+
+  // 3. تعبئة رسالة افتراضية حسب الخدمة
+  const messageField = document.getElementById('message');
+  if (!messageField.value.trim()) {
+    const defaultMessages = {
+      "تصميم شعار احترافي": "السلام عليكم،\nأرغب في تصميم شعار لعلامتي التجارية مع المواصفات التالية:\n- \n- \n\nشكراً",
+      "هوية بصرية كاملة": "السلام عليكم،\nأحتاج إلى هوية بصرية كاملة لعلامتي التجارية تتضمن:\n- شعار رئيسي\n- ألوان العلامة\n- دليل الاستخدام\n\nشكراً"
+      // يمكن إضافة رسائل افتراضية لكل خدمة
+    };
     
-    // إضافة رسالة توضيحية
-    document.getElementById('message').value = `أرغب في خدمة ${serviceName}`;
-  }
-</script>
-
-   function selectService(serviceName) {
-  // التمرير السلس للنموذج
-  const contactSection = document.getElementById('contact');
-  contactSection.style.animation = 'pulse 0.5s ease';
-  setTimeout(() => contactSection.style.animation = '', 500);
-  contactSection.scrollIntoView({ behavior: 'smooth' });
-
-  // تحديد الخدمة
-  const serviceSelect = document.getElementById('service');
-  const serviceOption = [...serviceSelect.options].find(opt => opt.text.includes(serviceName));
-  if (serviceOption) serviceOption.selected = true;
-
-  // إضافة رسالة افتراضية
-  const messageField = document.getElementById('message');
-  if (!messageField.value) {
-    messageField.value = `السلام عليكم،\nأحتاج إلى خدمة ${serviceName}\n\nالمواصفات المطلوبة:\n- \n- \n\nشكراً`;
+    messageField.value = defaultMessages[selectedOption.value] || 
+      `السلام عليكم،\nأرغب في خدمة ${selectedOption.text}\n\nالمواصفات المطلوبة:\n- \n- \n\nشكراً`;
   }
 }
 
-     function selectService(serviceName) {
-  // التمرير السلس للنموذج
-  const contactSection = document.getElementById('contact');
-  contactSection.style.animation = 'pulse 0.5s ease';
-  setTimeout(() => contactSection.style.animation = '', 500);
-  contactSection.scrollIntoView({ behavior: 'smooth' });
+// دالة إرسال الواتساب (حسب الكود الأصلي)
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value;
+  
+  const whatsappUrl = `https://wa.me/966500000000?text=${encodeURIComponent(
+    `*طلب خدمة:* ${service}\n\n*تفاصيل الطلب:*\n${message}`
+  )}`;
+  
+  window.open(whatsappUrl, '_blank');
+});
 
-  // تحديد الخدمة
-  const serviceSelect = document.getElementById('service');
-  const serviceOption = [...serviceSelect.options].find(opt => opt.text.includes(serviceName));
-  if (serviceOption) serviceOption.selected = true;
-
-  // إضافة رسالة افتراضية
-  const messageField = document.getElementById('message');
-  if (!messageField.value) {
-    messageField.value = `السلام عليكم،\nأحتاج إلى خدمة ${serviceName}\n\nالمواصفات المطلوبة:\n- \n- \n\nشكراً`;
-  }
-}
-          
-       @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255,122,0,0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(255,122,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,122,0,0); }
+   /* تنسيقات بطاقات الخدمات */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-#contact:target {
+.service-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: var(--primary);
+}
+
+.service-card-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.service-card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.service-card-desc {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* تأثير التمييز عند التمرير للنموذج */
+#contact.highlight {
   animation: pulse 1.5s;
 }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 122, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 122, 0, 0); }
+}
+          
+    
           
           <div class="form-group">
             <label for="message" class="form-label">الرسالة</label>
