@@ -924,6 +924,98 @@
     <option value="تصميم مخصص">تصميم مخصص (حدد التفاصيل في الرسالة)</option>
   </select>
 </div>
+    <!-- أولا: تعديل قسم الخدمات بإضافة روابط تنقل لنموذج الاتصال -->
+<div class="card" id="services">
+  <div class="card-body">
+    <h2 class="section-title"><i class="fas fa-paint-brush"></i> خدماتنا</h2>
+    
+    <div class="services-grid">
+      <!-- خدمة تصميم الهوية البصرية -->
+      <div class="service-card" onclick="selectService('تصميم شعار احترافي')">
+        <div class="service-card-icon"><i class="fas fa-palette"></i></div>
+        <div class="service-card-title">تصميم الهوية البصرية</div>
+        <div class="service-card-desc">تصميم شامل للهوية البصرية يشمل: الشعار، الألوان، الخطوط، كارت شخصي</div>
+      </div>
+      
+      <!-- باقي الخدمات بنفس النمط -->
+      <div class="service-card" onclick="selectService('إعلانات ومطبوعات')">
+        <div class="service-card-icon"><i class="fas fa-ad"></i></div>
+        <div class="service-card-title">تصميم الإعلانات</div>
+        <div class="service-card-desc">تصميم لافتات، بروشورات، فلايرات، ومطبوعات دعائية</div>
+      </div>
+      
+      <!-- ... باقي الخدمات بنفس الأسلوب ... -->
+    </div>
+  </div>
+</div>
+
+<!-- ثانيا: إضافة سكريبت لإتمام العملية -->
+<script>
+  function selectService(serviceName) {
+    // التمرير لنموذج الاتصال
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    
+    // تحديد نوع الخدمة المطلوبة
+    const serviceSelect = document.getElementById('service');
+    for (let i = 0; i < serviceSelect.options.length; i++) {
+      if (serviceSelect.options[i].text === serviceName) {
+        serviceSelect.selectedIndex = i;
+        break;
+      }
+    }
+    
+    // إضافة رسالة توضيحية
+    document.getElementById('message').value = `أرغب في خدمة ${serviceName}`;
+  }
+</script>
+
+   function selectService(serviceName) {
+  // التمرير السلس للنموذج
+  const contactSection = document.getElementById('contact');
+  contactSection.style.animation = 'pulse 0.5s ease';
+  setTimeout(() => contactSection.style.animation = '', 500);
+  contactSection.scrollIntoView({ behavior: 'smooth' });
+
+  // تحديد الخدمة
+  const serviceSelect = document.getElementById('service');
+  const serviceOption = [...serviceSelect.options].find(opt => opt.text.includes(serviceName));
+  if (serviceOption) serviceOption.selected = true;
+
+  // إضافة رسالة افتراضية
+  const messageField = document.getElementById('message');
+  if (!messageField.value) {
+    messageField.value = `السلام عليكم،\nأحتاج إلى خدمة ${serviceName}\n\nالمواصفات المطلوبة:\n- \n- \n\nشكراً`;
+  }
+}
+
+     function selectService(serviceName) {
+  // التمرير السلس للنموذج
+  const contactSection = document.getElementById('contact');
+  contactSection.style.animation = 'pulse 0.5s ease';
+  setTimeout(() => contactSection.style.animation = '', 500);
+  contactSection.scrollIntoView({ behavior: 'smooth' });
+
+  // تحديد الخدمة
+  const serviceSelect = document.getElementById('service');
+  const serviceOption = [...serviceSelect.options].find(opt => opt.text.includes(serviceName));
+  if (serviceOption) serviceOption.selected = true;
+
+  // إضافة رسالة افتراضية
+  const messageField = document.getElementById('message');
+  if (!messageField.value) {
+    messageField.value = `السلام عليكم،\nأحتاج إلى خدمة ${serviceName}\n\nالمواصفات المطلوبة:\n- \n- \n\nشكراً`;
+  }
+}
+          
+       @keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,122,0,0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255,122,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,122,0,0); }
+}
+
+#contact:target {
+  animation: pulse 1.5s;
+}
           
           <div class="form-group">
             <label for="message" class="form-label">الرسالة</label>
