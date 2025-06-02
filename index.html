@@ -942,3 +942,104 @@
 </script>
 
   
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // شاشة التحميل
+  const loader = document.querySelector('.loader');
+  const loaderProgress = document.getElementById('loaderProgress');
+  const profileImg = document.querySelector('.profile-img');
+  
+  // محاكاة تحميل الصفحة
+  let progress = 0;
+  const interval = setInterval(() => {
+    progress += Math.random() * 15;
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(interval);
+      
+      // إخفاء شاشة التحميل بعد اكتمال التقدم
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        
+        // إظهار الكروت بتأثير متتالي
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 200);
+        });
+      }, 500);
+    }
+    loaderProgress.style.width = `${progress}%`;
+  }, 300);
+  
+  // تأثير تحميل الصورة عند الرفرش
+  window.addEventListener('beforeunload', function() {
+    // إظهار شاشة التحميل عند الخروج
+    loader.classList.remove('hidden');
+    loaderProgress.style.width = '0%';
+  });
+  
+  // تأثير اهتزاز الصورة عند التحميل
+  profileImg.addEventListener('load', function() {
+    this.style.animation = 'pulse 1.5s 2';
+    setTimeout(() => {
+      this.style.animation = '';
+    }, 3000);
+  });
+  
+  // إعادة تحميل الصورة عند الرفرش لتظهر في المنتصف
+  window.addEventListener('load', function() {
+    // هذه التقنية تعيد تحميل الصورة مع الحفاظ على ذاكرة التخزين المؤقت
+    const imgSrc = profileImg.src;
+    profileImg.src = '';
+    profileImg.src = imgSrc;
+    
+    // تأثير ظهور الصورة
+    profileImg.style.opacity = '0';
+    setTimeout(() => {
+      profileImg.style.transition = 'opacity 0.8s ease';
+      profileImg.style.opacity = '1';
+    }, 100);
+  });
+  
+  // زر العودة للأعلى
+  const backToTop = document.createElement('div');
+  backToTop.className = 'back-to-top';
+  backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  document.body.appendChild(backToTop);
+  
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+  
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// هذه الدالة تضمن تحميل الصورة في المنتصف حتى عند الرفرش
+function reloadProfileImage() {
+  const profileImg = document.querySelector('.profile-img');
+  if (profileImg) {
+    const imgUrl = profileImg.src;
+    profileImg.src = '';
+    setTimeout(() => {
+      profileImg.src = imgUrl;
+    }, 100);
+  }
+}
+
+// استدعاء الدالة عند تحميل الصفحة وعند الرفرش
+window.onload = reloadProfileImage;
+window.onbeforeunload = function() {
+  reloadProfileImage();
+};
+</script>
