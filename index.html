@@ -920,3 +920,118 @@
     <optgroup label="تصميمات تعليمية">
       <option value="أغلفة كتب وملازم">أغلفة كتب ومل
         
+  <!-- Contact Card -->
+    <div class="card" id="contact">
+      <div class="card-body">
+        <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معنا</h2>
+        <div class="about-text">
+          <p>يمكنك التواصل معنا عبر أي من المنصات التالية:</p>
+        </div>
+        
+        <div class="contact-icons">
+          <a href="https://wa.me/201031423492" class="contact-icon whatsapp-icon" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://t.me/abuzaid_designs" class="contact-icon telegram-icon" target="_blank">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+          <a href="https://www.instagram.com/abuzaid_designs/" class="contact-icon instagram-icon" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576688616675" class="contact-icon facebook-icon" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/abuzaid_designs" class="contact-icon x-icon" target="_blank">
+            <img src="logo-X.png" alt="X">
+          </a>
+        </div>
+        
+        <div class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name" class="form-label">الاسم بالكامل</label>
+            <input type="text" id="name" class="form-input" placeholder="أدخل اسمك" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">البريد الإلكتروني</label>
+            <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">رقم الهاتف</label>
+            <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
+          </div>
+          
+        <div class="form-group">
+  <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
+  <select id="service" class="form-select" required>
+    <option value="">اختر من القائمة</option>
+    <optgroup label="تصميم الهوية البصرية">
+      <option value="تصميم شعار احترافي">تصميم شعار احترافي</option>
+      <option value="هوية بصرية كاملة">هوية بصرية كاملة (شعار + دليل استخدام)</option>
+    </optgroup>
+    <optgroup label="تصميم المطبوعات">
+      <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
+      <option value="بروشورات وكتيبات">بروشورات وكتيبات</option>
+      <option value="لافتات وبنرات">لافتات وبنرات</option>
+    </optgroup>
+    <optgroup label="تصميمات الأفراح والمناسبات">
+      <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
+      <option value="تصميمات مناسبات خاصة">تصميمات مناسبات خاصة</option>
+    </optgroup>
+    <optgroup label="تصميمات تعليمية">
+      <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
+      <option value="تصميمات عروض تقديمية">تصميمات عروض تقديمية</option>
+    </optgroup>
+    <optgroup label="خدمات التحويل الرقمي">
+      <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
+      <option value="إزالة خلفيات الصور">إزالة خلفيات الصور</option>
+    </optgroup>
+    <optgroup label="تصميمات السوشيال ميديا">
+      <option value="منشورات وسائل التواصل">منشورات وسائل التواصل</option>
+      <option value="ستوريات وانفوجرافيك">ستوريات وانفوجرافيك</option>
+    </optgroup>
+    <option value="تصميم مخصص">تصميم مخصص (حدد التفاصيل في الرسالة)</option>
+  </select>
+</div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">الرسالة</label>
+            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية"></textarea>
+          </div>
+          
+          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال</button>
+        </div>
+        
+        <div class="footer-message" style="margin-top: 25px;">
+          للتواصل السريع عبر واتساب: 
+          <a href="https://wa.me/201031423492" style="color: var(--primary); text-decoration: none; font-weight: 600;">اضغط هنا</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
+  </div>
+
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !phone || !service) {
+        alert('الرجاء إدخال البيانات المطلوبة (الاسم، رقم الهاتف، نوع الخدمة)');
+        return;
+      }
+
+      const whatsappText = `Abu Zaid Designs%0A%0Aالاسم: ${encodeURIComponent(name)}%0A%0Aالبريد الإلكتروني: ${encodeURIComponent(email || 'لم يتم تقديمه')}%0A%0Aرقم الهاتف: ${encodeURIComponent(phone)}%0A%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0A%0Aالرسالة: ${encodeURIComponent(message || 'لا توجد رسالة إضافية')}`;
+      
+      const whatsappUrl = `https://wa.me/201031423492?text=${whatsappText}`;
+      
+      window.open(whatsappUrl, '_blank');
+    }
+</script>
