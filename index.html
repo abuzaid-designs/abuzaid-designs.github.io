@@ -1,3 +1,12 @@
+سأقوم بإجراء التعديلات المطلوبة على الكود:
+
+1. إضافة خدمة فصل الألوان للطباعة
+2. تعديل خدمة التصميم المخصص حسب الطلب لتصبح في مربع عادي
+3. نقل الصورة الرئيسية إلى الجانب الأيمن
+
+إليك الكود المعدل:
+
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -51,7 +60,7 @@
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
       background-size: cover;
-      background-position: center;
+      background-position: right center;
       background-attachment: fixed;
       color: var(--text-color);
     }
@@ -770,8 +779,15 @@
         <div class="service-card-desc">إزالة خلفية الصور - تحويل الصور إلى PNG/JPG/PDF - تغيير مقاسات التصميم - تعديل ملفات PDF - تصميم قوالب جاهزة</div>
       </div>
       
+      <!-- فصل الألوان للطباعة -->
+      <div class="service-card">
+        <div class="service-card-icon"><i class="fas fa-print"></i></div>
+        <div class="service-card-title">فصل الألوان للطباعة</div>
+        <div class="service-card-desc">تحضير الملفات للطباعة بفصل الألوان CMYK مع ضبط دقة الطباعة وجودة الخطوط</div>
+      </div>
+      
       <!-- تصميم مخصص حسب الطلب -->
-      <div class="service-card-wide">
+      <div class="service-card">
         <div class="service-card-icon"><i class="fas fa-lightbulb"></i></div>
         <div class="service-card-title">تصميم مخصص حسب الطلب</div>
         <div class="service-card-desc">تصميمات خاصة حسب متطلبات العميل بأعلى جودة واحترافية، مع مراعاة جميع التفاصيل التي تريدها</div>
@@ -904,64 +920,11 @@
       <option value="إعلانات ومطبوعات">إعلانات ومطبوعات</option>
       <option value="بروشورات وكتيبات">بروشورات وكتيبات</option>
       <option value="لافتات وبنرات">لافتات وبنرات</option>
+      <option value="فصل ألوان للطباعة">فصل ألوان للطباعة</option>
     </optgroup>
     <optgroup label="تصميمات الأفراح والمناسبات">
       <option value="كروت أفراح ودعوات">كروت أفراح ودعوات</option>
       <option value="تصميمات مناسبات خاصة">تصميمات مناسبات خاصة</option>
     </optgroup>
     <optgroup label="تصميمات تعليمية">
-      <option value="أغلفة كتب وملازم">أغلفة كتب وملازم</option>
-      <option value="تصميمات عروض تقديمية">تصميمات عروض تقديمية</option>
-    </optgroup>
-    <optgroup label="خدمات التحويل الرقمي">
-      <option value="تحويل نصوص لملفات رقمية">تحويل نصوص لملفات رقمية</option>
-      <option value="إزالة خلفيات الصور">إزالة خلفيات الصور</option>
-    </optgroup>
-    <optgroup label="تصميمات السوشيال ميديا">
-      <option value="منشورات وسائل التواصل">منشورات وسائل التواصل</option>
-      <option value="ستوريات وانفوجرافيك">ستوريات وانفوجرافيك</option>
-    </optgroup>
-    <option value="تصميم مخصص">تصميم مخصص (حدد التفاصيل في الرسالة)</option>
-  </select>
-</div>
-          
-          <div class="form-group">
-            <label for="message" class="form-label">الرسالة</label>
-            <textarea id="message" class="form-textarea" placeholder="أخبرنا عن احتياجاتك التصميمية"></textarea>
-          </div>
-          
-          <button type="button" class="btn btn-primary" id="submitBtn" onclick="sendToWhatsApp()">إرسال</button>
-        </div>
-        
-        <div class="footer-message" style="margin-top: 25px;">
-          للتواصل السريع عبر واتساب: 
-          <a href="https://wa.me/201031423492" style="color: var(--primary); text-decoration: none; font-weight: 600;">اضغط هنا</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="copyright">
-    © 2025 Abu Zaid Designs. جميع الحقوق محفوظة.
-  </div>
-
-  <script>
-    function sendToWhatsApp() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const service = document.getElementById('service').value;
-      const message = document.getElementById('message').value;
-
-      if (!name || !phone || !service) {
-        alert('الرجاء إدخال البيانات المطلوبة (الاسم، رقم الهاتف، نوع الخدمة)');
-        return;
-      }
-
-      const whatsappText = `Abu Zaid Designs%0A%0Aالاسم: ${encodeURIComponent(name)}%0A%0Aالبريد الإلكتروني: ${encodeURIComponent(email || 'لم يتم تقديمه')}%0A%0Aرقم الهاتف: ${encodeURIComponent(phone)}%0A%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0A%0Aالرسالة: ${encodeURIComponent(message || 'لا توجد رسالة إضافية')}`;
-      
-      const whatsappUrl = `https://wa.me/201031423492?text=${whatsappText}`;
-      
-      window.open(whatsappUrl, '_blank');
-    }
-</script>
+      <option value="أغلفة كتب وملازم">أغلفة كتب ومل
