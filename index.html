@@ -110,10 +110,11 @@
       pointer-events: none;
     }
 
-    
   .profile-img {  
     display: block;
-    width: min(70vw, 380px);  /* سيأخذ الأصغر بين: 70% من عرض الشاشة أو 380px */
+    width: 80%;           /* حجم نسبي يتناسب مع الحاوية */
+    max-width: 380px;     /* أقصى حجم (للكمبيوتر) */
+    min-width: 240px;     /* أدنى حجم (للموبايل) */
     height: auto;
     object-fit: contain;    
     margin: 20px auto;
@@ -125,10 +126,29 @@
     box-shadow: none;
   }
   
-  /* نحتاج media query إضافي للشاشات الصغيرة جدًا */
+  /* media query إضافي للشاشات المتوسطة */
+  @media (max-width: 768px) {
+    .profile-img {
+      width: 70%;
+      max-width: 320px;
+    }
+  }
+  
+  /* media query للشاشات الصغيرة */
+  @media (max-width: 480px) {
+    .profile-img {
+      width: 65%;
+      max-width: 280px;
+      min-width: 220px;
+    }
+  }
+  
+  /* media query للشاشات الصغيرة جدًا */
   @media (max-width: 320px) {
     .profile-img {
-      width: min(85vw, 380px);  /* زيادة النسبة للشاشات الصغيرة جدًا */
+      width: 80%;
+      max-width: 250px;
+      min-width: 200px;
     }
   }
 
