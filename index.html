@@ -109,16 +109,29 @@
       background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
       pointer-events: none;
     }
-
-  .profile-img {
+.profile-img {
   display: block;
-  width: 380px;            /* حجم ثابت زي ما كنت محدده */
-  max-width: 380px;        /* مش هيتعدى المقاس ده */
-  height: auto;            /* يحافظ على النسب الأصلية للصورة */
-  object-fit: contain;     
-  margin: 0 auto 20px;     /* يخليها متوسّطة في النص */
-  transition: none;        /* منع أي تأثير عند hover */
+  width: 380px;         /* حجم ثابت للصورة */
+  height: auto;         /* يحافظ على النسب الأصلية */
+  object-fit: contain;  
+  margin: 20px auto;    /* في النص */
+  transition: none;
 }
+
+/* إزالة أي تأثير عند hover */
+.profile-img:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* نخلي الـ container يتيح للصورة تظهر بحجمها الطبيعي */
+.container {
+  width: auto;           /* مش 100% */
+  max-width: none;       /* ما فيش حد أقصى */
+  display: block;        /* مش flex */
+}
+
+  
 
 .profile-img:hover {
   transform: none;
