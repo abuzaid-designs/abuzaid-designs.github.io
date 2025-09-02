@@ -113,11 +113,10 @@
 .profile-img {
   display: block;        /* يظهر في سطر منفصل */
   width: 380px;          /* حجم ثابت للكمبيوتر */
-  max-width: 100%;       /* لو الشاشة أصغر، يخفض الحجم بدل ما يخرج من الشاشة */
   height: auto;          /* يحافظ على نسبة الصورة الأصلية */
   object-fit: contain;  
   margin: 20px auto;     /* يظهر في النص */
-  transition: none;
+  transition: none;      /* بدون أي تأثير عند التحريك */
 }
 
 .profile-img:hover {
@@ -126,13 +125,17 @@
 }
 
 /* حجم أصغر على الشاشات الصغيرة (موبايل) */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .profile-img {
-    width: 200px;        /* حجم أصغر للموبايل */
+    width: 250px;        /* حجم مناسب للموبايل */
   }
 }
 
-
+@media (max-width: 360px) {
+  .profile-img {
+    width: 200px;        /* أصغر للشاشات الصغيرة جدًا */
+  }
+    }
   
     .title {
       font-size: 2rem;
