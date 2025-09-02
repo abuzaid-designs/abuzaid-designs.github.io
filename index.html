@@ -110,47 +110,23 @@
       pointer-events: none;
     }
     
-.profile-img {
-  display: block;
-  width: 80%;           /* يجعل الصورة تتناسب مع حجم الحاوية */
-  max-width: 380px;     /* الحد الأقصى للكمبيوتر */
-  height: auto;
-  object-fit: contain;
-  margin: 20px auto;
-  transition: none;
-}
-
-@media (max-width: 480px) {
-  .profile-img {
-    max-width: 250px;   /* مناسب للموبايل */
-  }
-}
-
-@media (max-width: 360px) {
-  .profile-img {
-    max-width: 200px;   /* أصغر للشاشات الصغيرة جدًا */
-  }
-}
-
-
-.profile-img:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-/* حجم أصغر على الشاشات الصغيرة (موبايل) */
-@media (max-width: 480px) {
-  .profile-img {
-    width: 250px;        /* حجم مناسب للموبايل */
-  }
-}
-
-@media (max-width: 360px) {
-  .profile-img {
-    width: 200px;        /* أصغر للشاشات الصغيرة جدًا */
-  }
-    }
+  .profile-img {  
+    display: block;
+    width: 70vw;           /* حجم متجاوب بنسبة 70% من عرض الشاشة */
+    max-width: 380px;      /* أقصى حجم (للكمبيوتر) */
+    min-width: 200px;      /* أقل حجم (للموبايل) */
+    height: auto;
+    object-fit: contain;    
+    margin: 20px auto;
+    transition: none;
+  }  
   
+  .profile-img:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+
     .title {
       font-size: 2rem;
       font-weight: 900;
