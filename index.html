@@ -111,18 +111,27 @@
     }
     
 .profile-img {
-  display: block;
-  width: 380px;       /* حجم ثابت للوجو */
-  height: auto;       /* يحافظ على النسبة الأصلية */
+  display: block;        /* يظهر في سطر منفصل */
+  width: 380px;          /* حجم ثابت للكمبيوتر */
+  max-width: 100%;       /* لو الشاشة أصغر، يخفض الحجم بدل ما يخرج من الشاشة */
+  height: auto;          /* يحافظ على نسبة الصورة الأصلية */
   object-fit: contain;  
-  margin: 20px auto;  /* في النص */
-  transition: none;  
+  margin: 20px auto;     /* يظهر في النص */
+  transition: none;
 }
 
 .profile-img:hover {
   transform: none;
   box-shadow: none;
 }
+
+/* حجم أصغر على الشاشات الصغيرة (موبايل) */
+@media (max-width: 400px) {
+  .profile-img {
+    width: 200px;        /* حجم أصغر للموبايل */
+  }
+}
+
 
   
     .title {
