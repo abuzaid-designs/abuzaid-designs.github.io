@@ -109,12 +109,11 @@
       background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
       pointer-events: none;
     }
+
     
   .profile-img {  
     display: block;
-    width: 70vw;           /* حجم متجاوب بنسبة 70% من عرض الشاشة */
-    max-width: 380px;      /* أقصى حجم (للكمبيوتر) */
-    min-width: 200px;      /* أقل حجم (للموبايل) */
+    width: min(70vw, 380px);  /* سيأخذ الأصغر بين: 70% من عرض الشاشة أو 380px */
     height: auto;
     object-fit: contain;    
     margin: 20px auto;
@@ -126,6 +125,12 @@
     box-shadow: none;
   }
   
+  /* نحتاج media query إضافي للشاشات الصغيرة جدًا */
+  @media (max-width: 320px) {
+    .profile-img {
+      width: min(85vw, 380px);  /* زيادة النسبة للشاشات الصغيرة جدًا */
+    }
+  }
 
     .title {
       font-size: 2rem;
