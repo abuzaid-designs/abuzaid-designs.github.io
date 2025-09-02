@@ -109,31 +109,22 @@
       background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
       pointer-events: none;
     }
+    
 .profile-img {
   display: block;
-  width: 380px;         /* حجم ثابت للصورة */
-  height: auto;         /* يحافظ على النسب الأصلية */
+  width: 380px;       /* حجم ثابت للوجو */
+  height: auto;       /* يحافظ على النسبة الأصلية */
   object-fit: contain;  
-  margin: 20px auto;    /* في النص */
-  transition: none;
+  margin: 20px auto;  /* في النص */
+  transition: none;  
 }
 
-/* إزالة أي تأثير عند hover */
 .profile-img:hover {
   transform: none;
   box-shadow: none;
 }
 
-/* نخلي الـ container يتيح للصورة تظهر بحجمها الطبيعي */
-.container {
-  width: auto;           /* مش 100% */
-  max-width: none;       /* ما فيش حد أقصى */
-  display: block;        /* مش flex */
-}
-
   
-    
-
     .title {
       font-size: 2rem;
       font-weight: 900;
